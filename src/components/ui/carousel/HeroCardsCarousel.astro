@@ -1,0 +1,122 @@
+---
+// Import necessary modules and utilities
+import { Image } from "astro:assets";
+import ArabicSweetImage1 from "@assets/images/arabic-sweets-1.jpg";
+import ArabicSweetImage2 from "@assets/images/arabic-sweets-2.jpg";
+import ArabicSweetImage3 from "@assets/images/arabic-sweets-3.jpg";
+import ArabicSweetImage4 from "@assets/images/arabic-sweets-4.jpg";
+
+// Your existing image array
+const IMAGES = [
+  {
+    src: ArabicSweetImage1,
+    alt: "Arabic sweets in a decorative box",
+    title: "Baklava",
+  },
+  {
+    src: ArabicSweetImage2,
+    alt: "Arabic sweets in a decorative box",
+    title: "Kunafa",
+  },
+  {
+    src: ArabicSweetImage3,
+    alt: "Arabic sweets in a decorative box",
+    title: "Namoura",
+  },
+  {
+    src: ArabicSweetImage4,
+    alt: "Arabic sweets in a decorative box",
+    title: "Maamoul",
+  },
+];
+---
+
+<div class="scroll-container grid grid-cols-2 border">
+  <div class="scroll-content-top">
+    {
+      IMAGES.map(({ src, alt, title }) => (
+        <div class="relative">
+          <Image src={src} alt={alt} format={"avif"} class="" />
+          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
+            {title}
+          </p>
+        </div>
+      ))
+    }
+    {
+      IMAGES.map(({ src, alt, title }) => (
+        <div class="relative">
+          <Image src={src} alt={alt} format={"avif"} class="" />
+          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
+            {title}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+
+  <div class="scroll-content-bottom">
+    {
+      IMAGES.map(({ src, alt, title }) => (
+        <div class="relative">
+          <Image src={src} alt={alt} format={"avif"} class="" />
+          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
+            {title}
+          </p>
+        </div>
+      ))
+    }
+    {
+      IMAGES.map(({ src, alt, title }) => (
+        <div class="relative">
+          <Image src={src} alt={alt} format={"avif"} class="" />
+          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
+            {title}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  .scroll-container {
+    /* overflow: hidden; */
+    width: 100%; /* Adjust to your container size */
+    height: 600px; /* Adjust to your container size */
+    transform: rotate(10deg);
+  }
+
+  .scroll-content-top {
+    display: flex;
+    flex-direction: column;
+    animation: scroll-top 20s linear infinite;
+  }
+
+  .scroll-content-bottom {
+    display: flex;
+    flex-direction: column;
+    animation: scroll-bottom 20s linear infinite;
+  }
+
+  .tilt-right {
+    /* Adjust the angle as needed */
+  }
+
+  @keyframes scroll-top {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(-50%); /* Adjust based on content height */
+    }
+  }
+  @keyframes scroll-bottom {
+    from {
+      transform: translateY(-50%);
+    }
+    to {
+      transform: translateY(0); /* Adjust based on content height */
+    }
+  }
+</style>

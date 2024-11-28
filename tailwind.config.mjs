@@ -1,5 +1,5 @@
 /** @type {import('tailwindcss').Config} */
-import colors from 'tailwindcss/colors';
+import colors from "tailwindcss/colors";
 export default {
   content: [
     "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
@@ -14,25 +14,31 @@ export default {
       white: "#ffffff",
       gray: colors.gray,
       indigo: colors.indigo,
-      neutral: colors.neutral,  // Used mainly for text color
-      yellow: {
-        50: "#fefce8",
-        100: "#fef9c3",
-        400: "#facc15",
-        500: "#eab308",
-      }, // Accent colors, used mainly for star color, heading and buttons
-      orange: {
-        100: "#ffedd5",
-        200: "#fed7aa",
-        300: "#fb713b",
-        400: "#fa5a15",
-        500: "#e14d0b",
-        600: "#ea580c",
-      }, // Primary colors, used mainly for links, buttons and svg icons
+      neutral: colors.neutral, // Used mainly for text color
+      yellow: colors.yellow, // Accent colors, used mainly for star color, heading and buttons
+      orange: colors.orange, // Primary colors, used mainly for links, buttons and svg icons
       red: colors.red, // Used for bookmark icon
       zinc: colors.zinc, // Used mainly for box-shadow
+      primary: "#6B9080",
+      secondary: "#D4A373",
+      accent: "#ac6359",
+      green: {
+        50: "#F6FFF8",
+        100: "#EAF4F4",
+        300: "#CCE3DE",
+        500: "#A4C3B2",
+        700: "#6B9080",
+      },
+      // green: {
+      //   300: "#83d265",
+      //   400: "#75bf58",
+      // },
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [`"Noto Kufi Arabic", sans-serif`],
+      },
+    },
   },
   plugins: [
     require("tailwindcss/nesting"),

@@ -10,7 +10,7 @@ import TestimonialsSection from "@components/sections/testimonials/TestimonialsS
 import PricingSection from "@components/sections/pricing/PricingSection.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
-import heroImage from "@images/hero-image.avif";
+// import heroImage from "@images/hero-image.avif";
 import faqs from "@data/faqs.json";
 import features from "@data/features.json";
 import pricing from "@data/pricing.json";
@@ -18,6 +18,7 @@ import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import heroImage from "@assets/images/hero-image.png";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -35,13 +36,11 @@ const avatarSrcs: Array<string> = [
   />
 
   <HeroSection
-    title=`Equip Your Projects with <span
-        class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>`
-    subTitle="Top-quality hardware tools and expert construction services for every project need."
-    primaryBtn="Start Exploring"
+    title=`Sallora: A Treasure Trove of Flavors!`
+    subTitle="Indulge in the finest Arabic sweets, vibrant spices, and gourmet essentials like olive oil and murabba. Tradition starts here."
+    secondaryTitle="Bringing the Taste of Home to Your Table!"
+    primaryBtn="Explore our Products"
     primaryBtnURL="/products"
-    secondaryBtn="Contact Sales Team"
-    secondaryBtnURL="/contact"
     withReview={true}
     avatars={avatarSrcs}
     rating=`<span class="font-bold">4.8</span> / 5`
@@ -50,6 +49,12 @@ const avatarSrcs: Array<string> = [
     src={heroImage}
     alt="Stack of ScrewFast product boxes containing assorted hardware tools"
   />
+
+  <!-- <HeroSectionAlt
+    title="Sallora Uglo"
+    subTitle="Best Sweets in Europe"
+    url="google.com"
+  /> -->
 
   <ClientsSection
     title="Trusted by Industry Leaders"
