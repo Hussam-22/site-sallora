@@ -27,7 +27,7 @@ We set the language of the page to English and add classes for scrollbar and scr
     <Meta meta={meta} structuredData={structuredData} />
     <!-- Define the title of the page -->
     <title>{title}</title>
-    <script is:inline>
+    <!-- <script is:inline>
       // Script to handle dark mode. It will check if the theme is stored in localStorage or if dark theme is preferred by system settings
       if (
         localStorage.getItem("hs_theme") === "dark" ||
@@ -38,7 +38,7 @@ We set the language of the page to English and add classes for scrollbar and scr
       } else {
         document.documentElement.classList.remove("dark");
       }
-    </script>
+    </script> -->
     <script>
       import "@scripts/lenisSmoothScroll.js";
     </script>
