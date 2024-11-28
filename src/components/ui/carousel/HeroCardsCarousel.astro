@@ -31,7 +31,7 @@ const IMAGES = [
 ];
 ---
 
-<div class="scroll-container grid grid-cols-2 border">
+<div class="scroll-container grid grid-cols-2">
   <div class="scroll-content-top">
     {
       IMAGES.map(({ src, alt, title }) => (
@@ -82,9 +82,10 @@ const IMAGES = [
 <style>
   .scroll-container {
     /* overflow: hidden; */
-    width: 100%; /* Adjust to your container size */
+    width: 110%; /* Adjust to your container size */
     height: 600px; /* Adjust to your container size */
     transform: rotate(10deg);
+    transform-origin: bottom right;
   }
 
   .scroll-content-top {
