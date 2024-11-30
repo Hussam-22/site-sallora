@@ -9,30 +9,31 @@ const {
   bgColor,
   cardWidth,
   btnColor,
+  btnText,
   textColor = "text-white",
 } = Astro.props;
 ---
 
 <div
   class:list={[
-    "relative h-[300px] overflow-hidden rounded-3xl border-4 border-black",
+    "group relative h-[300px] overflow-hidden rounded-3xl border-4 border-black",
     bgColor,
     cardWidth,
     textColor,
   ]}
 >
-  <div class="relative z-10 flex flex-col space-y-1 p-8">
+  <div class="relative z-10 flex flex-col space-y-3 p-8">
     <h2 class="z-10 text-4xl font-bold">{title}</h2>
     <p class="z-10 w-2/3 text-sm">{subTitle}</p>
-    <LinkButton title={`Explore ${title}`} bgColor={btnColor} url="/products" />
+    <LinkButton title={btnText} bgColor={btnColor} url="/products" />
   </div>
   <Image
     src={ImageSrc}
     alt="Card Image"
-    class="absolute -bottom-24 -right-80 z-0 h-fit w-fit object-contain transition-transform duration-300 hover:scale-110"
+    class="absolute -bottom-24 -right-16 z-0 h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-110"
   />
-  <div
+  <!-- <div
     class="absolute inset-0 z-0 bg-gradient-to-r from-black to-transparent opacity-25"
   >
-  </div>
+  </div> -->
 </div>
