@@ -1,55 +1,71 @@
 ---
 // Import necessary modules and utilities
 import { Image } from "astro:assets";
-import ArabicSweetImage1 from "@assets/images/arabic-sweets-1.jpg";
-import ArabicSweetImage2 from "@assets/images/arabic-sweets-2.jpg";
-import ArabicSweetImage3 from "@assets/images/arabic-sweets-3.jpg";
-import ArabicSweetImage4 from "@assets/images/arabic-sweets-4.jpg";
+
+import SallouraUgloImage1 from "@assets/images/salloura-uglo-1.webp";
+import SallouraUgloImage2 from "@assets/images/salloura-uglo-2.webp";
+import SallouraUgloImage3 from "@assets/images/salloura-uglo-3.webp";
+import SallouraUgloImage4 from "@assets/images/salloura-uglo-4.webp";
+import SallouraUgloImage5 from "@assets/images/salloura-uglo-5.webp";
+import SallouraUgloImage6 from "@assets/images/salloura-uglo-6.webp";
+import SallouraUgloImage7 from "@assets/images/salloura-uglo-7.webp";
+import SallouraUgloImage8 from "@assets/images/salloura-uglo-8.webp";
+import SallouraUgloImage9 from "@assets/images/salloura-uglo-9.webp";
+import SallouraUgloImage10 from "@assets/images/salloura-uglo-10.webp";
+import SallouraUgloImage11 from "@assets/images/salloura-uglo-11.webp";
+import SallouraUgloImage12 from "@assets/images/salloura-uglo-12.webp";
+import SallouraUgloImage13 from "@assets/images/salloura-uglo-13.webp";
+import SallouraUgloImage14 from "@assets/images/salloura-uglo-14.webp";
+import SallouraUgloImage15 from "@assets/images/salloura-uglo-15.webp";
+
+// src: ArabicSweetImage1,
+//     alt: "Arabic sweets in a decorative box",
 
 // Your existing image array
 const IMAGES = [
-  {
-    src: ArabicSweetImage1,
-    alt: "Arabic sweets in a decorative box",
-    title: "Baklava",
-  },
-  {
-    src: ArabicSweetImage2,
-    alt: "Arabic sweets in a decorative box",
-    title: "Kunafa",
-  },
-  {
-    src: ArabicSweetImage3,
-    alt: "Arabic sweets in a decorative box",
-    title: "Namoura",
-  },
-  {
-    src: ArabicSweetImage4,
-    alt: "Arabic sweets in a decorative box",
-    title: "Maamoul",
-  },
+  // SallouraUgloImage1,
+  // SallouraUgloImage2,
+  // SallouraUgloImage3,
+  // SallouraUgloImage4,
+  // SallouraUgloImage5,
+  // SallouraUgloImage6,
+  SallouraUgloImage7,
+  SallouraUgloImage8,
+  SallouraUgloImage9,
+  SallouraUgloImage10,
+  SallouraUgloImage11,
+  SallouraUgloImage12,
+  SallouraUgloImage13,
+  SallouraUgloImage14,
+  SallouraUgloImage15,
 ];
 ---
 
 <div class="scroll-container grid grid-cols-2">
   <div class="scroll-content-top">
     {
-      IMAGES.map(({ src, alt, title }) => (
-        <div class="relative">
-          <Image src={src} alt={alt} format={"avif"} class="" />
-          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
-            {title}
-          </p>
+      IMAGES.map((imageSrc) => (
+        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+          <Image
+            src={imageSrc}
+            alt="Arabic sweets in a decorative box"
+            format={"avif"}
+            class="n rounded-2xl"
+            loading="eager"
+          />
         </div>
       ))
     }
     {
-      IMAGES.map(({ src, alt, title }) => (
-        <div class="relative">
-          <Image src={src} alt={alt} format={"avif"} class="" />
-          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
-            {title}
-          </p>
+      IMAGES.map((imageSrc) => (
+        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+          <Image
+            src={imageSrc}
+            alt="Arabic sweets in a decorative box"
+            format={"avif"}
+            class="n rounded-2xl"
+            loading="eager"
+          />
         </div>
       ))
     }
@@ -57,22 +73,28 @@ const IMAGES = [
 
   <div class="scroll-content-bottom">
     {
-      IMAGES.map(({ src, alt, title }) => (
-        <div class="relative">
-          <Image src={src} alt={alt} format={"avif"} class="" />
-          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
-            {title}
-          </p>
+      IMAGES.map((imageSrc) => (
+        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+          <Image
+            src={imageSrc}
+            alt="Arabic sweets in a decorative box"
+            format={"avif"}
+            class="n rounded-2xl"
+            loading="eager"
+          />
         </div>
       ))
     }
     {
-      IMAGES.map(({ src, alt, title }) => (
-        <div class="relative">
-          <Image src={src} alt={alt} format={"avif"} class="" />
-          <p class="absolute bottom-1 left-1/2 -translate-x-1/2 transform font-bold">
-            {title}
-          </p>
+      IMAGES.map((imageSrc) => (
+        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+          <Image
+            src={imageSrc}
+            alt="Arabic sweets in a decorative box"
+            format={"avif"}
+            class="n rounded-2xl"
+            loading="eager"
+          />
         </div>
       ))
     }
@@ -91,13 +113,13 @@ const IMAGES = [
   .scroll-content-top {
     display: flex;
     flex-direction: column;
-    animation: scroll-top 20s linear infinite;
+    animation: scroll-top 60s linear infinite;
   }
 
   .scroll-content-bottom {
     display: flex;
     flex-direction: column;
-    animation: scroll-bottom 20s linear infinite;
+    animation: scroll-bottom 60s linear infinite;
   }
 
   .tilt-right {
