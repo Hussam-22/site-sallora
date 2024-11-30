@@ -1,0 +1,17 @@
+---
+// Destructure the properties from Astro.props
+const { title, url, bgColor } = Astro.props;
+
+// Define TypeScript interface for the properties
+interface Props {
+  title?: string;
+  url?: string;
+  bgColor?: string;
+}
+// Define CSS classes for the hyperlink button
+---
+
+<!-- Styled hyperlink -->
+<a class:list={["w-fit rounded-3xl p-2 text-white", bgColor]} href={url}>
+  {title}
+</a>
