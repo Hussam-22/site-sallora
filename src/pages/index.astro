@@ -2,12 +2,13 @@
 // Import the necessary components
 import MainLayout from "@/layouts/MainLayout.astro";
 import HeroSection from "@components/sections/landing/HeroSection.astro";
+import BestSellingSection from "@components/sections/landing/BestSellingSection.astro";
 import HeroSectionAlt from "@components/sections/landing/HeroSectionAlt.astro";
 import ProductsFamilySection from "@components/sections/landing/ProductsFamilySection.astro";
 import FeaturesGeneral from "@components/sections/features/FeaturesGeneral.astro";
 import FeaturesNavs from "@components/sections/features/FeaturesNavs.astro";
 import TestimonialsSection from "@components/sections/testimonials/TestimonialsSection.astro";
-import PricingSection from "@components/sections/pricing/PricingSection.astro";
+import WorldMap from "@components/sections/landing/WorldMap.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import AnnouncementBanner from "@components/ui/banners/AnnouncementBanner.astro";
 // import heroImage from "@images/hero-image.avif";
@@ -18,6 +19,7 @@ import featureImage from "@images/features-image.avif";
 import construction from "@images/construction-image.avif";
 import tools from "@images/automated-tools.avif";
 import dashboard from "@images/dashboard-image.avif";
+import FeaturesStatsAlt from "@/components/sections/features/FeaturesStatsAlt.astro";
 
 const avatarSrcs: Array<string> = [
   "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=300&h=300&q=80",
@@ -59,45 +61,34 @@ const avatarSrcs: Array<string> = [
     subTitle="We are the sole supplier for Sallora Food Products, Sallora Uglo, and Asala Products across Europe."
   />
 
-  <FeaturesGeneral
-    title="Meeting Industry Demands"
-    subTitle="At ScrewFast, we tackle the unique challenges encountered in the hardware and construction sectors. From cutting-edge tools to expert services, we're dedicated to helping you overcome obstacles and achieve your goals."
-    src={featureImage}
-    alt="ScrewFast products in floating boxes"
-    features={features}
-  />
+  <BestSellingSection />
 
-  <FeaturesNavs
-    title=`Customize <span class="text-yellow-500 dark:text-yellow-400">ScrewFast</span>'s offerings to perfectly suit your hardware and construction needs.`
-    tabs={[
+  <FeaturesStatsAlt
+    title="Why Choose Salloura?"
+    subTitle="At Sallora, quality begins at the source. We pride ourselves on selecting only the finest ingredients to create products that are both authentic and exceptional. From our food products to our signature Arabic sweets, every item is crafted with care and precision, staying true to tradition while meeting modern standards."
+    benefits={[
       {
-        heading: "Cutting-Edge Tools",
-        content:
-          "Empower your projects with ScrewFast's cutting-edge tools. Experience enhanced efficiency in construction management with our sophisticated automated solutions.",
-        svg: "tools",
-        src: tools,
-        alt: "Yellow and black heavy equipment on brown grass field",
-        first: true,
+        title: "Authentic Arabic Sweets",
+        content: `Our Sallora Uglo sweets are made using traditional ingredients such as سمن بلدي (clarified butter) for an unmistakable richness and flavor. Each piece is a celebration of heritage, offering a taste that feels like home.`,
       },
       {
-        heading: "Intuitive Dashboards",
-        content:
-          "Navigate with ease using ScrewFast's intuitive dashboards. Set up and oversee your projects seamlessly, with user-friendly interfaces designed for quick and effective workflow management.",
-        svg: "dashboard",
-        src: dashboard,
-        alt: "A screenshot or graphic representation of the intuitive dashboard",
-        second: true,
+        title: `Organic and Natural Sources`,
+        content: `We prioritize health and sustainability by sourcing organic ingredients for our food products. From grains to spices, every element is carefully chosen to deliver the purest taste without compromise.`,
       },
+
       {
-        heading: "Robust Features",
-        content:
-          "Minimize complexity, maximize productivity. ScrewFast's robust features are engineered to streamline your construction process, delivering results that stand out for their excellence.",
-        svg: "house",
-        src: construction,
-        alt: "Gray metal building frame near tower crane during daytime",
+        title: `Locally and Ethically Sourced`,
+        content: `Our commitment to ethical sourcing ensures that all our products support local farmers and producers. By choosing Sallora, you contribute to a supply chain rooted in integrity and sustainability.`,
+      },
+
+      {
+        title: `No Artificial Additives`,
+        content: `Our products are free from artificial additives, ensuring a wholesome experience with every bite. We believe in letting the natural flavors of our ingredients shine.`,
       },
     ]}
   />
+
+  <WorldMap />
 
   <TestimonialsSection
     title="Fast-Track Your Projects"
@@ -135,8 +126,6 @@ const avatarSrcs: Array<string> = [
       },
     ]}
   />
-
-  <PricingSection pricing={pricing} />
 
   <FAQ title="Frequently<br />asked questions" faqs={faqs} />
 

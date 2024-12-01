@@ -1,0 +1,111 @@
+---
+import ProductCard from "@/components/ui/cards/ProductCard.astro";
+
+import image01 from "@srcImages/products/photography/photography-1.webp";
+import image02 from "@srcImages/products/photography/photography-2.webp";
+import image03 from "@srcImages/products/photography/photography-3.webp";
+import image04 from "@srcImages/products/photography/photography-4.webp";
+import image05 from "@srcImages/products/photography/photography-5.webp";
+import image06 from "@srcImages/products/photography/photography-6.webp";
+import image07 from "@srcImages/products/photography/photography-7.webp";
+import image08 from "@srcImages/products/photography/photography-8.webp";
+import LinkButton from "@/components/ui/buttons/LinkButton.astro";
+import SectionTitle from "@/components/ui/section-title.astro";
+
+const BEST_SELLING_PRODUCTS = [
+  {
+    title: "Namoura",
+    price: 19.99,
+    image: image01,
+    description: "This is a description for product 1.",
+    family: "Salloura Oglu",
+    link: "/products/product-1",
+  },
+  {
+    title: "Assorted Mix Arabic Sweets",
+    price: 29.99,
+    image: image02,
+    description: "This is a description for product 2.",
+    family: "Salloura Oglu",
+    link: "/products/product-2",
+  },
+  {
+    title: "Pistachio Warbat",
+    price: 39.99,
+    image: image03,
+    description: "This is a description for product 3.",
+    family: "Salloura Food Products",
+    link: "/products/product-3",
+  },
+  {
+    title: "Baklava",
+    price: 49.99,
+    image: image04,
+    description: "This is a description for product 4.",
+    family: "Salloura Food Products",
+    link: "/products/product-4",
+  },
+  {
+    title: "Kunafa",
+    price: 59.99,
+    image: image05,
+    description: "This is a description for product 5.",
+    family: "Salloura Oglu",
+    link: "/products/product-5",
+  },
+  {
+    title: "Maamoul",
+    price: 69.99,
+    image: image06,
+    description: "This is a description for product 6.",
+    family: "Asala",
+    link: "/products/product-6",
+  },
+  {
+    title: "Barazeq",
+    price: 69.99,
+    image: image07,
+    description: "This is a description for product 7.",
+    family: "Asala",
+    link: "/products/product-7",
+  },
+  {
+    title: "Dates Maamoul",
+    price: 69.99,
+    image: image08,
+    description: "This is a description for product 8.",
+    family: "Salloura Food Products",
+    link: "/products/product-8",
+  },
+];
+---
+
+<section>
+  <SectionTitle
+    title="Best Selling Products"
+    subTitle="Discover our most popular products, loved by customers worldwide."
+  />
+
+  <div class="grid grid-cols-4 gap-10">
+    {
+      BEST_SELLING_PRODUCTS.map((product) => (
+        <ProductCard
+          title={product.title}
+          price={product.price}
+          description={product.description}
+          imageSrc={product.image}
+          family={product.family}
+          link={product.link}
+        />
+      ))
+    }
+  </div>
+
+  <div class="mt-16 flex justify-center">
+    <LinkButton
+      title="+ View All Products"
+      url="/products"
+      class="bg-black px-4 py-2 text-xl text-white"
+    />
+  </div>
+</section>

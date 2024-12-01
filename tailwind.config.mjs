@@ -8,20 +8,14 @@ export default {
   darkMode: "class",
   theme: {
     colors: {
+      ...colors,
       transparent: "transparent",
       current: "currentColor",
       black: "#000000",
       white: "#ffffff",
-      gray: colors.gray,
-      indigo: colors.indigo,
-      neutral: colors.neutral, // Used mainly for text color
-      yellow: colors.yellow, // Accent colors, used mainly for star color, heading and buttons
-      orange: colors.orange, // Primary colors, used mainly for links, buttons and svg icons
-      red: colors.red, // Used for bookmark icon
-      zinc: colors.zinc, // Used mainly for box-shadow
       primary: "#6B9080",
-      secondary: "#D4A373",
-      accent: "#ac6359",
+      secondary: "#F9D88C",
+      accent: "#F9B38C",
       green: {
         50: "#F6FFF8",
         100: "#EAF4F4",

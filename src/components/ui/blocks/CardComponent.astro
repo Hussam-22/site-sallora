@@ -10,13 +10,14 @@ const {
   cardWidth,
   btnColor,
   btnText,
-  textColor = "text-white",
+  textColor = "text-black",
+  totalProducts,
 } = Astro.props;
 ---
 
 <div
   class:list={[
-    "group relative h-[300px] overflow-hidden rounded-3xl border-4 border-black",
+    "group relative h-[300px] overflow-hidden rounded-3xl",
     bgColor,
     cardWidth,
     textColor,
@@ -25,6 +26,11 @@ const {
   <div class="relative z-10 flex flex-col space-y-3 p-8">
     <h2 class="z-10 text-4xl font-bold">{title}</h2>
     <p class="z-10 w-2/3 text-sm">{subTitle}</p>
+    {
+      totalProducts && (
+        <p class="z-10 w-2/3 text-sm text-black">{totalProducts} Products</p>
+      )
+    }
     <LinkButton title={btnText} bgColor={btnColor} url="/products" />
   </div>
   <Image

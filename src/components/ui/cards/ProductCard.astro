@@ -1,0 +1,58 @@
+---
+import { Image } from "astro:assets";
+import LinkButton from "../buttons/LinkButton.astro";
+
+const { title, price, description, imageSrc, family, link } = Astro.props;
+
+interface Props {
+  title: string;
+  price: number;
+  description: string;
+  imageSrc: any;
+  family: string;
+  link: string;
+}
+---
+
+<!-- component -->
+<div class="flex h-full items-center justify-center">
+  <div class="h-full max-w-[720px]">
+    <!-- Centering wrapper -->
+    <div
+      class="relative flex h-full flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+      <div
+        class="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none"
+      >
+        <Image
+          src={imageSrc}
+          alt="ui/ux review check"
+          class="h-72 object-cover"
+          format={"avif"}
+        />
+      </div>
+      <div class="flex flex-grow flex-col justify-between bg-white p-4">
+        <div>
+          <p class="mb-1 text-xs text-zinc-400">
+            #{family}
+          </p>
+          <h4
+            class="block font-sans text-2xl font-semibold leading-snug tracking-normal text-black antialiased"
+          >
+            {title}
+          </h4>
+          <!-- <p class="mt-2 text-sm text-gray-600">{description}</p> -->
+        </div>
+        <div class="mt-4 flex flex-row items-center justify-between">
+          <p class="text-lg font-bold">{price} euro</p>
+          <LinkButton
+            title="View Product"
+            url={link}
+            bgColor="bg-primary"
+            class="rounded-3xl px-2 py-2 text-sm text-white hover:bg-black"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

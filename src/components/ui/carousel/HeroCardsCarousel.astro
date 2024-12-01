@@ -2,68 +2,56 @@
 // Import necessary modules and utilities
 import { Image } from "astro:assets";
 
-import SallouraUgloImage1 from "@assets/images/salloura-uglo-1.webp";
-import SallouraUgloImage2 from "@assets/images/salloura-uglo-2.webp";
-import SallouraUgloImage3 from "@assets/images/salloura-uglo-3.webp";
-import SallouraUgloImage4 from "@assets/images/salloura-uglo-4.webp";
-import SallouraUgloImage5 from "@assets/images/salloura-uglo-5.webp";
-import SallouraUgloImage6 from "@assets/images/salloura-uglo-6.webp";
-import SallouraUgloImage7 from "@assets/images/salloura-uglo-7.webp";
-import SallouraUgloImage8 from "@assets/images/salloura-uglo-8.webp";
-import SallouraUgloImage9 from "@assets/images/salloura-uglo-9.webp";
-import SallouraUgloImage10 from "@assets/images/salloura-uglo-10.webp";
-import SallouraUgloImage11 from "@assets/images/salloura-uglo-11.webp";
-import SallouraUgloImage12 from "@assets/images/salloura-uglo-12.webp";
-import SallouraUgloImage13 from "@assets/images/salloura-uglo-13.webp";
-import SallouraUgloImage14 from "@assets/images/salloura-uglo-14.webp";
-import SallouraUgloImage15 from "@assets/images/salloura-uglo-15.webp";
+import image01 from "@srcImages/products/photography/photography-1.webp";
+import image02 from "@srcImages/products/photography/photography-2.webp";
+import image03 from "@srcImages/products/photography/photography-3.webp";
+import image04 from "@srcImages/products/photography/photography-4.webp";
+import image05 from "@srcImages/products/photography/photography-5.webp";
+import image06 from "@srcImages/products/photography/photography-6.webp";
+import image07 from "@srcImages/products/photography/photography-7.webp";
+import image08 from "@srcImages/products/photography/photography-8.webp";
+import image09 from "@srcImages/products/photography/photography-9.webp";
 
 // src: ArabicSweetImage1,
 //     alt: "Arabic sweets in a decorative box",
 
 // Your existing image array
 const IMAGES = [
-  // SallouraUgloImage1,
-  // SallouraUgloImage2,
-  // SallouraUgloImage3,
-  // SallouraUgloImage4,
-  // SallouraUgloImage5,
-  // SallouraUgloImage6,
-  SallouraUgloImage7,
-  SallouraUgloImage8,
-  SallouraUgloImage9,
-  SallouraUgloImage10,
-  SallouraUgloImage11,
-  SallouraUgloImage12,
-  SallouraUgloImage13,
-  SallouraUgloImage14,
-  SallouraUgloImage15,
+  image01,
+  image02,
+  image03,
+  image04,
+  image05,
+  image06,
+  image07,
+  image08,
+  image09,
 ];
 ---
 
-<div class="scroll-container grid grid-cols-2">
+<div class="scroll-container grid grid-cols-2 gap-4">
   <div class="scroll-content-top">
     {
-      IMAGES.map((imageSrc) => (
-        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+      IMAGES.slice(0, 4).map((imageSrc) => (
+        <div class="my-1 h-80 w-[350px] rounded-2xl border-2 border-zinc-200 bg-zinc-100">
           <Image
             src={imageSrc}
             alt="Arabic sweets in a decorative box"
             format={"avif"}
-            class="rounded-2xl"
+            class="h-80 w-[350px] rounded-2xl object-cover"
             loading="eager"
           />
         </div>
       ))
     }
     {
-      IMAGES.map((imageSrc) => (
-        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+      IMAGES.slice(0, 4).map((imageSrc) => (
+        <div class="my-1 h-80 w-[350px] rounded-2xl border-2 border-zinc-200 bg-zinc-100">
           <Image
             src={imageSrc}
             alt="Arabic sweets in a decorative box"
             format={"avif"}
-            class="rounded-2xl"
+            class="h-80 w-[350px] rounded-2xl object-cover"
             loading="eager"
           />
         </div>
@@ -73,26 +61,26 @@ const IMAGES = [
 
   <div class="scroll-content-bottom">
     {
-      IMAGES.map((imageSrc) => (
-        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+      IMAGES.slice(5, 9).map((imageSrc) => (
+        <div class="my-1 h-80 w-[350px] rounded-2xl border-2 border-zinc-200 bg-zinc-100">
           <Image
             src={imageSrc}
             alt="Arabic sweets in a decorative box"
             format={"avif"}
-            class="rounded-2xl"
+            class="h-80 w-[350px] rounded-2xl object-cover"
             loading="eager"
           />
         </div>
       ))
     }
     {
-      IMAGES.map((imageSrc) => (
-        <div class="m-1 rounded-2xl border-2 border-zinc-200 bg-zinc-100">
+      IMAGES.slice(5, 9).map((imageSrc) => (
+        <div class="my-1 h-80 w-[350px] rounded-2xl border-2 border-zinc-200 bg-zinc-100">
           <Image
             src={imageSrc}
             alt="Arabic sweets in a decorative box"
             format={"avif"}
-            class="rounded-2xl"
+            class="h-80 w-[350px] rounded-2xl object-cover"
             loading="eager"
           />
         </div>
@@ -104,8 +92,8 @@ const IMAGES = [
 <style>
   .scroll-container {
     /* overflow: hidden; */
-    width: 110%; /* Adjust to your container size */
-    height: 600px; /* Adjust to your container size */
+    width: 100%; /* Adjust to your container size */
+    height: 500px; /* Adjust to your container size */
     transform: rotate(10deg);
     transform-origin: bottom right;
   }
@@ -113,12 +101,17 @@ const IMAGES = [
   .scroll-content-top {
     display: flex;
     flex-direction: column;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
     animation: scroll-top 60s linear infinite;
   }
 
   .scroll-content-bottom {
     display: flex;
     flex-direction: column;
+    justify-content: flex-end;
+    align-items: end;
     animation: scroll-bottom 60s linear infinite;
   }
 
