@@ -2,28 +2,36 @@
   "subTitle": "Ask us anything about our brand and products, and get factual responses.",
   "faqs": [
     {
-      "question": "What types of tools are included in the Starter Kit?",
-      "answer": "The Starter Kit features essential hand and power tools for diverse DIY projects, including hammers, drills, screwdrivers, and a variety of fasteners. It's a curated selection to help beginners and experienced DIYers alike tackle most home improvement tasks."
+      "question": "What products do you supply under the Salloura brand?",
+      "answer": "We supply a wide range of Salloura food products, including extra virgin olive oil, zaatar, tahini, sumac, sesame seeds, and other pantry essentials known for their premium quality and authentic Middle Eastern flavors."
     },
     {
-      "question": "Can I upgrade from the Starter Kit to the Professional Toolbox?",
-      "answer": "Absolutely! You can upgrade to the Professional Toolbox at any time to access a wider range of high-quality tools, enjoy priority customer support, and receive exclusive content. Contact our support team for a seamless transition."
+      "question": "What is the ASALA brand, and what products does it include?",
+      "answer": "ASALA is a trusted brand we’ve added to our product family, offering a variety of high-quality food products such as spices, olive oils, zaatar blends, and traditional condiments that complement our Salloura range."
     },
     {
-      "question": "What discounts are available for bulk orders through the Professional Toolbox plan?",
-      "answer": "Professional Toolbox members are entitled to exclusive discounts on bulk orders, the percentage of which may vary depending on the order volume. Get in touch with us to discuss your needs, and we'll provide a tailored discount structure."
+      "question": "Are you the sole supplier of Salloura products in Europe?",
+      "answer": "Yes, we are proud to be the exclusive supplier of Salloura food products across Europe, ensuring that you receive authentic, high-quality goods directly from the source."
     },
     {
-      "question": "What kind of customer support can I expect?",
-      "answer": "All our customers receive dedicated email support. With the Starter Kit, you'll receive our standard support, while the Professional Toolbox plan upgrades you to priority support, meaning faster response times and specialized assistance."
+      "question": "Where can I buy your products?",
+      "answer": "You can purchase our products directly through our website. We offer convenient delivery across Europe to ensure you enjoy Salloura and ASALA products wherever you are."
     },
     {
-      "question": "How current are the online resources and tutorials?",
-      "answer": "We regularly update our online resources and tutorials to reflect the latest trends in DIY and construction, as well as introductions to new tools and techniques. Our material aims to be comprehensive and user-friendly for all skill levels."
+      "question": "Do you ship to all European countries?",
+      "answer": "Yes, we provide shipping to all European countries. Delivery times may vary depending on your location. Please refer to our shipping policy for details."
     },
     {
-      "question": "Does ScrewFast offer services for large-scale construction projects?",
-      "answer": "Yes, our Enterprise Solutions are designed for larger companies requiring comprehensive services. We provide consultation, planning, and supply of high-grade tools and materials, as well as staffing solutions for substantial construction needs. Contact us for a customized quote."
+      "question": "What makes Salloura and ASALA products unique?",
+      "answer": "Both Salloura and ASALA products are crafted with authentic Middle Eastern recipes and the finest ingredients, ensuring unmatched quality, taste, and freshness in every item."
+    },
+    {
+      "question": "How do I store your products to maintain their quality?",
+      "answer": "Most of our products, such as olive oil, zaatar, and spices, should be stored in a cool, dry place away from direct sunlight. Always check individual packaging for specific storage instructions."
+    },
+    {
+      "question": "Can I purchase your products in bulk?",
+      "answer": "Yes, we offer bulk purchasing options for businesses, restaurants, and retailers. Please contact us directly for bulk order inquiries and pricing."
     }
   ]
 }
