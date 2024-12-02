@@ -21,12 +21,14 @@ const product = await getCollection("products", ({ id, data }) => {
   return id.startsWith("en/") && data.family.includes(productName);
 });
 
+console.log(product);
+
 const pageTitle: string = `Products | ${SITE.title}`;
 const GROUPS = [
+  { title: "all products", path: "" },
   { title: "salloura oglu", path: "salloura-oglu-products" },
   { title: "salloura", path: "salloura-products" },
   { title: "asala", path: "asala-products" },
-  { title: "all products", path: "" },
 ];
 ---
 
@@ -61,10 +63,15 @@ const GROUPS = [
           <li class="text-xl font-semibold capitalize">Filter By:</li>
           {
             GROUPS.map((group) => (
-              <li class="">
+              <li>
                 <a
                   href={`/products/${group.path}`}
-                  class="cursor-pointer text-xl font-semibold capitalize text-zinc-400 hover:text-black"
+                  class:list={[
+                    "cursor-pointer text-xl font-semibold capitalize",
+                    productName === group.path
+                      ? "rounded-lg bg-green-700 px-3 py-1 text-white"
+                      : "text-zinc-400 hover:text-black",
+                  ]}
                 >
                   {group.title}
                 </a>

@@ -27,15 +27,18 @@ import ProductCard from "@/components/ui/cards/ProductCard.astro";
 const product = await getCollection("products", ({ id }) => {
   return id.startsWith("en/");
 });
+const url = Astro.url;
+const productName = url.pathname.substring(url.pathname.lastIndexOf("/") + 1);
+console.log(product[0].slug.substring(product[0].slug.indexOf("/") + 1));
 
 product.sort((a, b) => Number(a.data.weight) - Number(b.data.weight));
 
 const pageTitle: string = `Products | ${SITE.title}`;
 const GROUPS = [
+  { title: "all products", path: "" },
   { title: "salloura oglu", path: "salloura-oglu-products" },
   { title: "salloura", path: "salloura-products" },
   { title: "asala", path: "asala-products" },
-  { title: "all products", path: "" },
 ];
 ---
 
@@ -70,10 +73,15 @@ const GROUPS = [
           <li class="text-xl font-semibold capitalize">Filter By:</li>
           {
             GROUPS.map((group) => (
-              <li class="">
+              <li>
                 <a
                   href={`/products/${group.path}`}
-                  class="cursor-pointer text-xl font-semibold capitalize text-zinc-400 hover:text-black"
+                  class:list={[
+                    "cursor-pointer text-xl font-semibold capitalize",
+                    productName === group.path
+                      ? "rounded-lg bg-green-700 px-3 py-1 text-white"
+                      : "text-zinc-400 hover:text-black",
+                  ]}
                 >
                   {group.title}
                 </a>
@@ -92,7 +100,7 @@ const GROUPS = [
                 description={product.data.description}
                 imageSrc={product.data.img}
                 family={product.data.family}
-                link={product.slug}
+                link={product.slug.substring(product.slug.indexOf("/") + 1)}
               />
             ))
           }
