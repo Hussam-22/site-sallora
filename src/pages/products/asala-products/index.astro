@@ -14,21 +14,12 @@ import { SITE } from "@data/constants";
 import SectionTitle from "@/components/ui/section-title.astro";
 import ProductCard from "@/components/ui/cards/ProductCard.astro";
 
-// Fetching all the product related content and sorting it by main.id
-// const product: CollectionEntry<"products">[] = (
-//   await getCollection("products", ({ id }: { id: string }) => {
-//     return id.startsWith("en/");
-//   })
-// ).sort(
-//   (a: CollectionEntry<"products">, b: CollectionEntry<"products">) =>
-//     Number(a.data.id) - Number(b.data.id)
-// );
+const url = Astro.url;
+const productName = url.pathname.substring(url.pathname.lastIndexOf("/") + 1);
 
-const product = await getCollection("products", ({ id }) => {
-  return id.startsWith("en/");
+const product = await getCollection("products", ({ id, data }) => {
+  return id.startsWith("en/") && data.family.includes(productName);
 });
-
-product.sort((a, b) => Number(a.data.weight) - Number(b.data.weight));
 
 const pageTitle: string = `Products | ${SITE.title}`;
 const GROUPS = [

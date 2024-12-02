@@ -9,13 +9,13 @@ interface Props {
   price: number;
   description: string;
   imageSrc: any;
-  family: string;
+  family: Array<string>;
   link: string;
 }
 ---
 
 <!-- component -->
-<div class="flex h-full items-center justify-center">
+<div class="group flex h-full items-center justify-center">
   <div class="h-full max-w-[720px]">
     <!-- Centering wrapper -->
     <div
@@ -27,7 +27,7 @@ interface Props {
         <Image
           src={imageSrc}
           alt="ui/ux review check"
-          class="h-72 object-cover"
+          class="h-fit max-h-56 object-cover"
           format={"avif"}
         />
       </div>

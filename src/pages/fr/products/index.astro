@@ -13,7 +13,7 @@ import type { CollectionEntry } from "astro:content";
 
 // Fetching all the product related content and sorting it by main.id
 const product: CollectionEntry<"products">[] = (
-  await getCollection("products", ({ id }) => {
+  await getCollection("products", ({ id }: { id: string }) => {
     return id.startsWith("fr/");
   })
 ).sort(
@@ -107,7 +107,8 @@ const testimonials = [
     </div>
     <!--Displaying products in alternating styles. Alternative product gets different card styling.-->
     <!--Maps through all product entries and displays them with either CardSmall or CardWide based on their position.-->
-    <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
+
+    <!-- <section class="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
       {
         product.map((product, index) => {
           const position = index % 4;
@@ -118,21 +119,7 @@ const testimonials = [
           }
         })
       }
-    </section>
+    </section> -->
   </div>
   <!--Features statistics section-->
-  <FeaturesStatsAlt
-    title="Pourquoi choisir ScrewFast ?"
-    subTitle="Transformez vos idées en résultats tangibles avec les outils ScrewFast. Que vous commenciez par un croquis sur un coin de table ou plongiez dans un projet de construction complet, nos outils sont conçus pour vous aider à construire en toute confiance."
-    benefits={[
-      "Outils robustes et fiables pour des performances durables.",
-      "Solutions innovantes adaptées aux besoins de construction modernes.",
-      "Support client dédié au succès de votre projet.",
-    ]}
-  />
-  <!--Testimonials section-->
-  <TestimonialsSectionAlt
-    title="Ce que disent nos clients"
-    testimonials={testimonials}
-  />
 </MainLayout>
