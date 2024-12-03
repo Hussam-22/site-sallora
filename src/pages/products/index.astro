@@ -29,7 +29,6 @@ const product = await getCollection("products", ({ id }) => {
 });
 const url = Astro.url;
 const productName = url.pathname.substring(url.pathname.lastIndexOf("/") + 1);
-console.log(product[0].slug.substring(product[0].slug.indexOf("/") + 1));
 
 product.sort((a, b) => Number(a.data.weight) - Number(b.data.weight));
 
@@ -68,7 +67,7 @@ const GROUPS = [
       subTitle="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores, cumque reiciendis. Hic dolores, enim et veritatis nesciunt, omnis quae amet itaque exercitationem reiciendis ratione assumenda asperiores. Quibusdam aliquid vel quas?"
     />
     <div class="grid grid-cols-12 gap-4">
-      <div class="col-span-12 rounded-3xl bg-green-100 p-4">
+      <div class="col-span-12 rounded-3xl bg-green-100 px-4 py-6">
         <ul class="flex flex-row space-x-6 px-4">
           <li class="text-xl font-semibold capitalize">Filter By:</li>
           {
@@ -100,7 +99,7 @@ const GROUPS = [
                 description={product.data.description}
                 imageSrc={product.data.img}
                 family={product.data.family}
-                link={product.slug.substring(product.slug.indexOf("/") + 1)}
+                link={`${product.slug.substring(product.slug.indexOf("/") + 1)}`}
               />
             ))
           }
