@@ -1,11 +1,11 @@
 ---
-title: "Product 1 name"
-description: lorem long description for product 1 name
-img: src/assets/images/products/salloura-oglu/product-32.webp
-family: [salloura-products]
-price: 39.99
+title: "product-1"
+description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+img: src/assets/images/products/asala/product-1.webp
+family: [asala-products]
+price: 25.99
 priceDiscount: 0
-weight: 1.1
-rating: 86
-id: A1B2C3
- ---
+weight: 2.00001
+rating: 100
+id: VFvC4NtbUfz3
+---

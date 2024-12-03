@@ -90,7 +90,9 @@ const GROUPS = [
         </ul>
       </div>
       <div class="col-span-12 rounded-3xl bg-zinc-100 p-4">
-        <div class="grid grid-cols-4 gap-4">
+        <div
+          class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5"
+        >
           {
             product.map((product) => (
               <ProductCard
@@ -100,6 +102,7 @@ const GROUPS = [
                 imageSrc={product.data.img}
                 family={product.data.family}
                 link={`${product.slug.substring(product.slug.indexOf("/") + 1)}`}
+                client:idle
               />
             ))
           }
