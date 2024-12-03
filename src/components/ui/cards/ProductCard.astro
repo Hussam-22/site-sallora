@@ -22,12 +22,12 @@ interface Props {
       class="relative flex h-full flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
       <div
-        class="relative m-0 overflow-hidden rounded-none bg-transparent bg-clip-border text-gray-700 shadow-none"
+        class="relative m-0 overflow-hidden rounded-none bg-transparent bg-zinc-100 bg-clip-border p-1 text-gray-700 shadow-none"
       >
         <Image
           src={imageSrc}
           alt="ui/ux review check"
-          class="h-fit max-h-56 object-contain"
+          class="h-56 rounded-xl object-cover"
           loading={"lazy"}
         />
       </div>
@@ -37,14 +37,14 @@ interface Props {
             #{family}
           </p>
           <h4
-            class="block font-sans text-2xl font-semibold leading-snug tracking-normal text-black antialiased"
+            class="block font-sans text-xl font-semibold leading-snug tracking-normal text-black antialiased"
           >
             {title}
           </h4>
           <!-- <p class="mt-2 text-sm text-gray-600">{description}</p> -->
         </div>
         <div class="mt-4 flex flex-row items-center justify-between">
-          <p class="text-lg font-bold">{price} euro</p>
+          <p class="text-sm font-bold text-primary">{price} €</p>
           <!-- <LinkButton
             title="View Product"
             url={link}
@@ -52,9 +52,9 @@ interface Props {
             class="rounded-3xl px-2 py-2 text-sm text-white hover:bg-black"
           /> -->
           <img
-            src="/public/assets/icons/add-to-cart.svg"
+            src="/src/assets/icons/add-to-cart.svg"
             alt="Add to cart"
-            class="h-12 w-12 cursor-pointer rounded-full bg-zinc-200 p-2 transition-all hover:bg-green-300"
+            class="h-9 w-9 cursor-pointer rounded-full bg-zinc-200 p-2 transition-all hover:bg-green-300"
           />
         </div>
       </div>

@@ -1,5 +1,5 @@
 ---
-import { languages } from "@utils//ui";
+import { languages } from "@utils/ui";
 import Icon from "./icons/Icon.astro";
 ---
 
@@ -75,7 +75,9 @@ import Icon from "./icons/Icon.astro";
         if (lang === url.pathname.split("/")[1]) return;
 
         // Determine if the current URL already has a language prefix
-        const currentLang = languages.includes(pathParts[0] as TLanguage) ? pathParts[0] : "en";
+        const currentLang = languages.includes(pathParts[0] as TLanguage)
+          ? pathParts[0]
+          : "en";
 
         // Remove current language prefix from pathParts
         if (languages.includes(pathParts[0] as TLanguage)) {

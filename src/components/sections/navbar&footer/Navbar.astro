@@ -7,6 +7,7 @@ import enStrings from "@utils/navigation.ts";
 import frStrings from "@utils/fr/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
+import CartBtn from "@/components/ui/buttons/CartBtn.astro";
 
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
@@ -15,7 +16,7 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/en";
 
 <!-- Main header component -->
 <header
-  class="sticky inset-x-0 top-4 z-50 flex w-full flex-wrap text-sm md:flex-nowrap md:justify-start"
+  class="sticky inset-x-0 top-4 z-40 flex w-full flex-wrap text-sm sm:px-16 md:flex-nowrap md:justify-start"
 >
   <!-- Navigation container -->
   <nav
@@ -30,8 +31,8 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/en";
         aria-label="Brand"
       >
         <!-- <BrandLogo class="h-auto w-24" /> -->
-        <p class="leading text-2xl leading-none">Salloura</p>
-        <p class="text-sm text-zinc-500">Food Products</p>
+        <p class="leading text-2xl leading-none text-green-700">Salloura</p>
+        <p class="text-sm text-black">Food Products</p>
       </a>
       <!-- Collapse toggle for smaller screens -->
       <div class="ml-auto mr-5 md:hidden">
@@ -94,7 +95,7 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/en";
           ))
         }
 
-        <Authentication />
+        <CartBtn />
         <LanguagePicker />
         <!-- ThemeIcon component specifically for larger screens -->
         <!-- <span class="hidden md:inline-block">

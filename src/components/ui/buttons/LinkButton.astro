@@ -4,7 +4,7 @@ const {
   title,
   url,
   bgColor,
-  class: style = "text-white hover:bg-zinc-700",
+  class: style = "text-white hover:bg-black",
 } = Astro.props;
 
 // Define TypeScript interface for the properties
@@ -18,6 +18,13 @@ interface Props {
 ---
 
 <!-- Styled hyperlink -->
-<a class:list={["-ml-2 w-fit rounded-lg px-2 py-1", bgColor, style]} href={url}>
+<a
+  class:list={[
+    "-ml-2 w-fit rounded-lg px-2 py-1 transition-all",
+    bgColor,
+    style,
+  ]}
+  href={url}
+>
   {title}
 </a>

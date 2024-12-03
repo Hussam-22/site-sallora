@@ -12,26 +12,34 @@ import { SITE } from "@data/constants";
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
 
 // Define the variables that will be used in this component
-const sectionThreeTitle: string = Astro.currentLocale === "fr" ? "Rester à jour" : "Stay up to date";
-const sectionThreeContent: string = Astro.currentLocale === "fr" ? "Restez informé des derniers outils et des offres exclusives." :
-  "Stay updated with the latest tools and exclusive deals.";
-const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafted by";
+const sectionThreeTitle: string =
+  Astro.currentLocale === "fr" ? "Rester à jour" : "Stay up to date";
+const sectionThreeContent: string =
+  Astro.currentLocale === "fr"
+    ? "Restez informé des derniers outils et des offres exclusives."
+    : "Stay updated with the latest tools and exclusive deals.";
+const crafted: string =
+  Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafted by";
 ---
 
-<footer class="w-full bg-neutral-300 dark:bg-neutral-900">
+<footer class="w-full bg-black dark:bg-neutral-900">
   <div
     class="mx-auto w-full max-w-[85rem] px-4 py-10 sm:px-6 lg:px-16 lg:pt-20 2xl:max-w-screen-2xl"
   >
     <div class="grid grid-cols-2 gap-6 md:grid-cols-4 lg:grid-cols-5">
       <div class="col-span-full lg:col-span-1">
         <!-- Brand Logo -->
-        <BrandLogo class="h-auto w-32" />
+        <!-- <BrandLogo class="h-auto w-32" /> -->
+        <div class="flex flex-col">
+          <p class="text-3xl font-semibold text-green-700">Salloura</p>
+          <p class="text-white">Food Products</p>
+        </div>
       </div>
       <!-- An array of links for Product and Company sections -->
       {
         strings.footerLinks.map((section) => (
           <div class="col-span-1">
-            <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+            <h3 class="font-bold text-green-700 dark:text-neutral-200">
               {section.section}
             </h3>
             <ul class="mt-3 grid space-y-3">
@@ -39,7 +47,7 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
                 <li>
                   <a
                     href={link.url}
-                    class="inline-flex gap-x-2 rounded-lg text-neutral-600 outline-none ring-zinc-500 transition duration-300 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-300 dark:focus:outline-none"
+                    class="inline-flex gap-x-2 rounded-lg text-white outline-none ring-zinc-500 transition duration-300 hover:text-neutral-500 focus-visible:ring dark:text-neutral-400 dark:ring-zinc-200 dark:hover:text-neutral-300 dark:focus:outline-none"
                   >
                     {link.name}
                   </a>
@@ -56,13 +64,13 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
       }
 
       <div class="col-span-2">
-        <h3 class="font-bold text-neutral-800 dark:text-neutral-200">
+        <h3 class="font-bold text-green-700 dark:text-neutral-200">
           {sectionThreeTitle}
         </h3>
 
         <form>
           <EmailFooterInput />
-          <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-400">
+          <p class="mt-3 text-sm text-white dark:text-neutral-400">
             {sectionThreeContent}
           </p>
         </form>
@@ -73,13 +81,14 @@ const crafted: string = Astro.currentLocale === "fr" ? "Fabriqué par" : "Crafte
       class="mt-9 grid gap-y-2 sm:mt-12 sm:flex sm:items-center sm:justify-between sm:gap-y-0"
     >
       <div class="flex items-center justify-between">
-        <p class="text-sm text-neutral-600 dark:text-neutral-400">
-          © <span id="current-year"></span> {SITE.title}. {crafted}
+        <p class="text-sm text-white dark:text-neutral-400">
+          © <span id="current-year"></span>
+          {SITE.title}. {crafted}
           <a
             class="rounded-lg font-medium underline underline-offset-2 outline-none ring-zinc-500 transition duration-300 hover:text-neutral-700 hover:decoration-dashed focus:outline-none focus-visible:ring dark:ring-zinc-200 dark:hover:text-neutral-300"
             href="https://www.gulamoff.dev/"
             target="_blank"
-            rel="noopener noreferrer">gulamoff</a
+            rel="noopener noreferrer">HuSSaM</a
           >.
         </p>
       </div>

@@ -50,6 +50,16 @@ export default {
         sans: [`"Noto Kufi Arabic", sans-serif`],
       },
     },
+    daisyui: {
+      themes: [
+        {
+          light: {
+            ...require("daisyui/src/theming/themes")["light"],
+            // "text-primary": "#000000",
+          },
+        },
+      ],
+    },
   },
   plugins: [
     require("tailwindcss/nesting"),
