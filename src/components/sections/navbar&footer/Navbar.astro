@@ -8,6 +8,7 @@ import frStrings from "@utils/fr/navigation.ts";
 import BrandLogo from "@components/BrandLogo.astro";
 import LanguagePicker from "@components/ui/LanguagePicker.astro";
 import CartBtn from "@/components/ui/buttons/CartBtn.astro";
+import NavBarCartButton from "@/components/react/navbar-cart-btn";
 
 // Select the correct translation based on the page's lang prop:
 const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
@@ -95,7 +96,7 @@ const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/en";
           ))
         }
 
-        <CartBtn />
+        <NavBarCartButton client:load />
         <LanguagePicker />
         <!-- ThemeIcon component specifically for larger screens -->
         <!-- <span class="hidden md:inline-block">

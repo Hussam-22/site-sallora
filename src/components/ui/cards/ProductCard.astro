@@ -1,8 +1,9 @@
 ---
 import { Image } from "astro:assets";
 import LinkButton from "../buttons/LinkButton.astro";
+import QuickAddRemoveCartButton from "@/components/react/quick-add-remove-cart-btn";
 
-const { title, price, description, imageSrc, family, link } = Astro.props;
+const { title, price, description, imageSrc, family, link, id } = Astro.props;
 
 interface Props {
   title: string;
@@ -11,7 +12,14 @@ interface Props {
   imageSrc: any;
   family: Array<string>;
   link: string;
+  id: string;
 }
+
+const product = {
+  title: title,
+  price: price,
+  id: id,
+};
 ---
 
 <!-- component -->
@@ -51,11 +59,7 @@ interface Props {
             bgColor="bg-primary"
             class="rounded-3xl px-2 py-2 text-sm text-white hover:bg-black"
           /> -->
-          <img
-            src="/src/assets/icons/add-to-cart.svg"
-            alt="Add to cart"
-            class="h-9 w-9 cursor-pointer rounded-full bg-zinc-200 p-2 transition-all hover:bg-green-300"
-          />
+          <QuickAddRemoveCartButton product={product} client:visible />
         </div>
       </div>
     </div>
