@@ -11,7 +11,7 @@ export default function NavBarCartButton() {
       <img
         src="/src/assets/icons/cart-icon.svg"
         alt="Cart"
-        class="z-20 h-8 w-8 cursor-pointer transition-all hover:scale-110"
+        class="z-20 h-8 w-8 cursor-pointer"
       />
       {cartLength !== 0 && (
         <span class="text-md absolute -right-1 -top-2 z-10 ml-2 rounded-full bg-green-500 px-1 py-0.5 font-bold text-black">
