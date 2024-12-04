@@ -3,17 +3,39 @@
   "compilerOptions": {
     "baseUrl": ".",
     "strictNullChecks": true,
-    "types": ["astro/client"],
+    "types": [
+      "astro/client"
+    ],
     "paths": {
-      "@/*": ["src/*"],
-      "@components/*": ["src/components/*"],
-      "@content/*": ["src/content/*"],
-      "@data/*": ["src/data_files/*"],
-      "@images/*": ["src/images/*"],
-      "@scripts/*": ["src/assets/scripts/*"],
-      "@styles/*": ["src/assets/styles/*"],
-      "@utils/*": ["src/utils/*"],
-      "@srcImages/*": ["src/assets/images/*"]
-    }
+      "@/*": [
+        "src/*"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@content/*": [
+        "src/content/*"
+      ],
+      "@data/*": [
+        "src/data_files/*"
+      ],
+      "@images/*": [
+        "src/images/*"
+      ],
+      "@scripts/*": [
+        "src/assets/scripts/*"
+      ],
+      "@styles/*": [
+        "src/assets/styles/*"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@srcImages/*": [
+        "src/assets/images/*"
+      ]
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }

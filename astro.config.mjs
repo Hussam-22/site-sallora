@@ -22,6 +22,7 @@ export default defineConfig({
   //   },
   // },
   prefetch: true,
+  // output: "server",
   integrations: [
     tailwind(),
     sitemap({
