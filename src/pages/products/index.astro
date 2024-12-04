@@ -11,7 +11,6 @@ const product = await getCollection("products", ({ id }) => {
 });
 const url = Astro.url;
 const productName = url.pathname.substring(url.pathname.lastIndexOf("/") + 1);
-console.log({ path: url.pathname, productName });
 
 product.sort((a, b) => Number(a.data.weight) - Number(b.data.weight));
 
