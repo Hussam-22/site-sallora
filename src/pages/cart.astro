@@ -2,14 +2,9 @@
 import SectionTitle from "@/components/ui/section-title.astro";
 import { SITE } from "@/data_files/constants";
 import MainLayout from "@/layouts/MainLayout.astro";
-import { getCollection } from "astro:content";
 import CartItems from "@/components/react/cart-items";
 
 const pageTitle: string = `Cart | ${SITE.title}`;
-
-const products = await getCollection("products", ({ id }) => {
-  return id.startsWith("en/");
-});
 ---
 
 <MainLayout
@@ -38,6 +33,6 @@ const products = await getCollection("products", ({ id }) => {
       subTitle="Provide your shipping details and proceed to checkout, our team will contact you for delivery and payment confirmation."
     />
 
-    <CartItems products={products} client:load />
+    <CartItems client:load />
   </section>
 </MainLayout>

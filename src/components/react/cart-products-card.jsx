@@ -1,6 +1,13 @@
 import useCartStore from "@/stores/cart-store";
 
-export default function CartProductsCard({ title, price, imageSrc, qty, id }) {
+export default function CartProductsCard({
+  title,
+  price,
+  imageSrc,
+  qty,
+  id,
+  family,
+}) {
   const addOne = useCartStore((state) => state.addOne);
   const removeOne = useCartStore((state) => state.removeOne);
   const removeFromCart = useCartStore((state) => state.removeFromCart);
@@ -12,7 +19,10 @@ export default function CartProductsCard({ title, price, imageSrc, qty, id }) {
         alt={title}
         className="h-24 w-24 rounded-3xl bg-white object-cover p-1"
       />
-      <p className="flex-grow px-4 text-xl text-black">{title}</p>
+      <div className="flex-grow px-4">
+        <p className="text-xl text-black">{title}</p>
+        <p className="text-xs text-zinc-600">{family.join(" - ")}</p>
+      </div>
       <div className="flex flex-row gap-2">
         <p className="border-r-2 border-r-zinc-300 px-2 text-xl text-black">
           {price * qty} €
