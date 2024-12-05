@@ -1,0 +1,143 @@
+---
+import enStrings from "@utils/navigation.ts";
+import frStrings from "@utils/fr/navigation.ts";
+import NavBarCartButton from "@/components/react/navbar-cart-btn";
+
+const strings = Astro.currentLocale === "fr" ? frStrings : enStrings;
+const homeUrl = Astro.currentLocale === "fr" ? "/fr" : "/";
+
+const url = Astro.url.pathname;
+---
+
+<!-- Main header component -->
+<header
+  class="sticky inset-x-0 top-4 z-40 flex w-full flex-wrap text-sm sm:px-16 md:flex-nowrap md:justify-start"
+>
+  <!-- Navigation container -->
+  <nav
+    class="relative w-full rounded-[36px] border border-zinc-100/40 bg-zinc-200/60 px-4 py-0 backdrop-blur-md sm:mx-2 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:mx-auto"
+    aria-label="Global"
+  >
+    <div class="drawer drawer-end text-black">
+      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Navbar -->
+        <div class="navbar w-full flex-row items-center justify-between px-4">
+          <a class="flex flex-col" href={homeUrl} aria-label="Brand">
+            <!-- <BrandLogo class="h-auto w-24" /> -->
+            <p class="leading text-2xl font-bold leading-none text-green-700">
+              Salloura
+            </p>
+            <p class="text-sm text-black">Food Products</p>
+          </a>
+
+          <div class="flex-none lg:hidden">
+            <label
+              for="my-drawer-3"
+              aria-label="open sidebar"
+              class="btn btn-square btn-ghost"
+              title="open menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block h-6 w-6 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </label>
+            <div class="sm:hidden">
+              <NavBarCartButton client:load />
+            </div>
+          </div>
+
+          <div class="hidden flex-none lg:block">
+            <ul class="menu menu-horizontal">
+              <!-- Navbar menu content here -->
+              {
+                strings.navBarLinks.map((link) => (
+                  <>
+                    {
+                      <li>
+                        <a
+                          href={link.url}
+                          class:list={[
+                            "text-lg font-semibold hover:bg-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 hover:bg-clip-text hover:text-transparent",
+                            url === link.url
+                              ? "bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent"
+                              : "",
+                          ]}
+                        >
+                          <span>{link.name}</span>
+                        </a>
+                      </li>
+                    }
+                  </>
+                ))
+              }
+            </ul>
+          </div>
+
+          <div class="hidden sm:mt-0 sm:flex sm:flex-row sm:gap-4">
+            <NavBarCartButton client:load />
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar drawer -->
+      <div class="drawer-side -top-4 z-50">
+        <label
+          for="my-drawer-3"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+          title="close menu"></label>
+        <ul
+          class="menu min-h-full w-52 rounded-[50px_0_0_50px] bg-gold-50 px-2 py-8"
+        >
+          <!-- Sidebar content here -->
+          {
+            strings.navBarLinks.map((link) => (
+              <>
+                {
+                  <li class="-my-1">
+                    <a
+                      href={link.url}
+                      class:list={[
+                        "text-lg font-semibold hover:bg-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 hover:bg-clip-text hover:text-transparent",
+                        url === link.url
+                          ? "bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent"
+                          : "",
+                      ]}
+                    >
+                      <span>{link.name}</span>
+                    </a>
+                  </li>
+                }
+              </>
+            ))
+          }
+          <li class="text-xl">
+            <a
+              href="https://app.astro-menu.com/login"
+              class="text-green-400 font-semibold">Log in</a
+            >
+          </li>
+          <li>
+            <a
+              href="/pricing"
+              class=""
+              class="bg-green-400 mt-2 text-xl text-black"
+            >
+              Get Started</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
