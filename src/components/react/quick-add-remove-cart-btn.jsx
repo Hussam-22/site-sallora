@@ -10,7 +10,7 @@ export default function QuickAddRemoveCartButton({ product }) {
       <img
         src="/src/assets/icons/remove-from-cart.svg"
         alt="Remove from cart"
-        class="h-9 w-9 cursor-pointer rounded-full bg-green-500 p-2 transition-all hover:bg-red-300"
+        className="h-9 w-9 cursor-pointer rounded-full bg-green-500 p-2 transition-all hover:bg-red-300"
         onClick={() => removeFromCart(product.id)}
       />
     );
@@ -20,7 +20,7 @@ export default function QuickAddRemoveCartButton({ product }) {
     <img
       src="/src/assets/icons/add-to-cart.svg"
       alt="Add to cart"
-      class="h-9 w-9 cursor-pointer rounded-full bg-zinc-200 p-2 transition-all hover:bg-green-300"
+      className="h-9 w-9 cursor-pointer rounded-full bg-zinc-200 p-2 transition-all hover:bg-green-300"
       onClick={() => addToCart(product)}
     />
   );
