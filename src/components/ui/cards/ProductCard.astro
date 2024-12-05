@@ -3,7 +3,16 @@ import { Image } from "astro:assets";
 import LinkButton from "../buttons/LinkButton.astro";
 import QuickAddRemoveCartButton from "@/components/react/quick-add-remove-cart-btn";
 
-const { title, price, description, imageSrc, family, link, id } = Astro.props;
+const {
+  title,
+  price,
+  description,
+  imageSrc,
+  family,
+  link,
+  id,
+  class: classStyle,
+} = Astro.props;
 
 interface Props {
   title: string;
@@ -13,6 +22,7 @@ interface Props {
   family: Array<string>;
   link: string;
   id: string;
+  class?: string;
 }
 
 const product = {
@@ -26,36 +36,36 @@ const product = {
 ---
 
 <!-- component -->
-<div class="group flex h-full items-center justify-center">
+<div class:list={["group flex h-full items-center justify-center", classStyle]}>
   <div class="h-full max-w-[720px]">
     <!-- Centering wrapper -->
     <div
       class="relative flex h-full flex-col overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
       <div
-        class="relative m-0 overflow-hidden rounded-none bg-transparent bg-zinc-100 bg-clip-border p-1 text-gray-700 shadow-none"
+        class="relative m-0 overflow-hidden rounded-xl bg-transparent bg-white bg-clip-border text-gray-700 shadow-none"
       >
         <Image
           src={imageSrc}
           alt="ui/ux review check"
-          class="h-56 rounded-xl object-cover"
+          class="h-80 rounded-xl object-contain sm:h-64"
           loading={"lazy"}
         />
       </div>
-      <div class="flex flex-grow flex-col justify-between bg-white p-4">
+      <div class="flex flex-grow flex-col justify-between bg-zinc-50 p-4">
         <div>
           <p class="mb-1 text-xs text-zinc-400">
             #{family}
           </p>
-          <h4
-            class="block font-sans text-xl font-semibold leading-snug tracking-normal text-black antialiased"
+          <p
+            class="block font-sans text-2xl font-semibold leading-snug tracking-normal text-black antialiased"
           >
             {title}
-          </h4>
+          </p>
           <!-- <p class="mt-2 text-sm text-gray-600">{description}</p> -->
         </div>
         <div class="mt-4 flex flex-row items-center justify-between">
-          <p class="text-sm font-bold text-primary">{price} €</p>
+          <p class="text-lg font-bold text-black">{price} €</p>
           <!-- <LinkButton
             title="View Product"
             url={link}

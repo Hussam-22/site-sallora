@@ -25,10 +25,10 @@ const {
 >
   <div class="relative z-10 flex flex-col space-y-3 p-8">
     <h2 class="z-10 text-4xl font-bold">{title}</h2>
-    <p class="z-10 w-2/3 text-sm">{subTitle}</p>
+    <p class="z-10 text-sm sm:w-2/3">{subTitle}</p>
     {
       totalProducts && (
-        <p class="z-10 w-2/3 text-sm text-black">{totalProducts} Products</p>
+        <p class="z-10 text-sm text-black sm:w-2/3">{totalProducts} Products</p>
       )
     }
     <LinkButton title="view products" bgColor={btnColor} url="/products" />
@@ -36,7 +36,7 @@ const {
   <Image
     src={ImageSrc}
     alt="Card Image"
-    class="absolute -bottom-24 -right-16 z-0 h-80 w-80 object-contain transition-transform duration-300 group-hover:scale-110"
+    class="absolute -bottom-10 -right-10 z-0 h-48 w-48 object-contain transition-transform duration-300 group-hover:scale-110 sm:-bottom-24 sm:-right-16 sm:h-80 sm:w-80"
   />
   <!-- <div
     class="absolute inset-0 z-0 bg-gradient-to-r from-black to-transparent opacity-25"
