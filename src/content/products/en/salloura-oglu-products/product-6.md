@@ -8,4 +8,5 @@ priceDiscount: 0
 weight: 1.00006
 rating: 100
 id: zSsoSu69MWYK
+bestSelling: true
 ---

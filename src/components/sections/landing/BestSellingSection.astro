@@ -11,6 +11,7 @@ import image07 from "@srcImages/products/photography/photography-7.webp";
 import image08 from "@srcImages/products/photography/photography-8.webp";
 import LinkButton from "@/components/ui/buttons/LinkButton.astro";
 import SectionTitle from "@/components/ui/section-title.astro";
+import { getCollection } from "astro:content";
 
 const BEST_SELLING_PRODUCTS = [
   {
@@ -78,6 +79,12 @@ const BEST_SELLING_PRODUCTS = [
     link: "/products/product-8",
   },
 ];
+
+const bestSellingProducts = await getCollection("products", ({ id, data }) => {
+  return id.startsWith("en/") && data?.bestSelling === true;
+});
+
+console.log(bestSellingProducts);
 ---
 
 <section>
@@ -88,14 +95,15 @@ const BEST_SELLING_PRODUCTS = [
 
   <div class="grid grid-cols-4 gap-10">
     {
-      BEST_SELLING_PRODUCTS.map((product) => (
+      bestSellingProducts.map((product) => (
         <ProductCard
-          title={product.title}
-          price={product.price}
-          description={product.description}
-          imageSrc={product.image}
-          family={product.family}
-          link={product.link}
+          title={product.data.title}
+          price={product.data.price}
+          description={product.data.description}
+          imageSrc={product.data.img}
+          family={product.data.family}
+          link={product.slug}
+          id={product.data.id}
         />
       ))
     }

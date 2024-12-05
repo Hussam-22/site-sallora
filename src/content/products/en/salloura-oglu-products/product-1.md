@@ -8,4 +8,5 @@ priceDiscount: 0
 weight: 1.00001
 rating: 100
 id: YMek3ozKm5Sk
+bestSelling: true
 ---

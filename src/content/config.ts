@@ -16,6 +16,7 @@ const productsCollection = defineCollection({
       id: z.string(),
       weight: z.number(),
       rating: z.number(),
+      bestSelling: z.boolean().optional(),
     }),
 });
 

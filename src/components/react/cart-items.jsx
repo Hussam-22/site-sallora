@@ -68,7 +68,7 @@ export default function CartItems() {
             <div className="mt-1 flex flex-row items-center justify-center gap-3">
               <p className="text-sm text-zinc-600">Total Cost:</p>
               <p className="text-sm font-semibold text-black">
-                {totalCartCost.toFixed(2)}
+                {totalCartCost.toFixed(2)} €
               </p>
             </div>
             {/* <div className="mt-1 flex flex-row items-center justify-end gap-3">

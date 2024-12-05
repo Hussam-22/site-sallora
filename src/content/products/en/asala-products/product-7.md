@@ -8,4 +8,5 @@ priceDiscount: 0
 weight: 2.00007
 rating: 100
 id: MsFa6lAnIklC
+bestSelling: true
 ---
