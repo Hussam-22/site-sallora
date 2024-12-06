@@ -15,7 +15,7 @@ const url = Astro.url.pathname;
 >
   <!-- Navigation container -->
   <nav
-    class="relative w-full rounded-[36px] border border-zinc-100/40 bg-zinc-200/60 px-4 py-0 backdrop-blur-md sm:mx-2 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:mx-auto"
+    class="relative w-full rounded-[36px] border border-zinc-100/40 bg-zinc-200/20 px-4 py-0 backdrop-blur-md sm:mx-2 sm:flex sm:items-center sm:justify-between sm:px-6 lg:px-8 xl:mx-auto"
     aria-label="Global"
   >
     <div class="drawer drawer-end text-black">
@@ -25,10 +25,10 @@ const url = Astro.url.pathname;
         <div class="navbar w-full flex-row items-center justify-between px-4">
           <a class="flex flex-col" href={homeUrl} aria-label="Brand">
             <!-- <BrandLogo class="h-auto w-24" /> -->
-            <p class="leading text-2xl font-bold leading-none text-green-700">
+            <p class="leading text-2xl font-bold leading-none text-primary">
               Salloura
             </p>
-            <p class="text-sm text-black">Food Products</p>
+            <p class="text-sm font-semibold text-black">Food Products</p>
           </a>
 
           <div class="flex-none lg:hidden">
@@ -67,10 +67,8 @@ const url = Astro.url.pathname;
                         <a
                           href={link.url}
                           class:list={[
-                            "text-lg font-semibold hover:bg-transparent hover:bg-gradient-to-r hover:from-green-500 hover:to-green-700 hover:bg-clip-text hover:text-transparent",
-                            url === link.url
-                              ? "bg-gradient-to-r from-green-500 to-green-700 bg-clip-text text-transparent"
-                              : "",
+                            "bg-clip-text text-lg font-semibold hover:bg-clip-text hover:text-green-700 hover:text-transparent",
+                            url === link.url ? "text-primary" : "",
                           ]}
                         >
                           <span>{link.name}</span>

@@ -1,6 +1,7 @@
 ---
 // Import AvatarTestimonialSection component for use in this module
 import AvatarTestimonialSection from "../../ui/avatars/AvatarTestimonialSection.astro";
+import FeaturesStats from "../features/FeaturesStats.astro";
 
 // Define props from Astro
 const { title, testimonials } = Astro.props;
@@ -22,11 +23,33 @@ interface Props {
 ---
 <!-- Main div that wraps the testimonials section -->
 <section
-  class="mx-auto max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 2xl:max-w-full bg-white py-16 rounded-3xl"
   id="testimonials"
 >
+
+<FeaturesStats
+    title="By the Numbers"
+    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
+    mainStatTitle="96%"
+    mainStatSubTitle="Customer Satisfaction Rate"
+    stats={[
+      {
+        stat: "55+",
+        description: "Resellers across Europe",
+      },
+      {
+        stat: "95,000+",
+        description: "Sold Products",
+      },
+      {
+        stat: "131+",
+        description: "Available Products",
+      },
+    ]}
+  />
+
   <!-- Title of the testimonials section -->
-  <div class="mb-6 w-3/4 max-w-2xl sm:mb-10 md:mb-16 lg:w-1/2">
+  <div class="w-3/4 max-w-2xl mt-20 mb-6">
     <h2
       class="text-balance text-2xl font-bold text-neutral-800 dark:text-neutral-200 sm:text-3xl lg:text-4xl"
     >

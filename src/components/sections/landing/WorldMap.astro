@@ -1,10 +1,12 @@
 ---
 import SectionTitle from "@/components/ui/section-title.astro";
 import FeaturesStats from "../features/FeaturesStats.astro";
+import { Image } from "astro:assets";
+import europeFlag from "@/assets/images/misc/europe-flag.jpg";
 ---
 
 <section
-  class="overflow-visible rounded-3xl border-2 border-zinc-200 bg-white px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
+  class="overflow-visible rounded-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
 >
   <!-- <SectionTitle
     title="Supply & Logistics"
@@ -12,10 +14,10 @@ import FeaturesStats from "../features/FeaturesStats.astro";
   /> -->
   <div class="grid grid-cols-2 gap-8">
     <div class="content-center">
-      <p class="text-5xl font-bold text-green-700">
+      <p class="text-5xl font-bold text-black">
         Your Trusted Supplier of Salloura and Asala Food Products Across Europe
       </p>
-      <p class="mt-3 text-pretty font-light">
+      <p class="mt-3 text-pretty font-light text-black">
         We are proud to be the sole supplier of Salloura products across Europe,
         bringing you the finest selection of authentic Syrian sweets and
         delicacies straight from the renowned Salloura brand. Known for its rich
@@ -29,32 +31,7 @@ import FeaturesStats from "../features/FeaturesStats.astro";
       </p>
     </div>
     <div class="">
-      <img
-        src="/assets/shapes/world-map.svg"
-        alt="World Map"
-        class="rounded-3xl"
-      />
+      <Image src={europeFlag} alt="World Map" class="rounded-3xl" />
     </div>
   </div>
-
-  <FeaturesStats
-    title="By the Numbers"
-    subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
-    mainStatTitle="96%"
-    mainStatSubTitle="Customer Satisfaction Rate"
-    stats={[
-      {
-        stat: "55+",
-        description: "Resellers across Europe",
-      },
-      {
-        stat: "95,000+",
-        description: "Sold Products",
-      },
-      {
-        stat: "131+",
-        description: "Available Products",
-      },
-    ]}
-  />
 </section>

@@ -25,7 +25,7 @@ export default function NavBarCartButton() {
           className={`z-20 h-7 w-7 cursor-pointer transition-all ${cart.length === 0 ? "opacity-25" : ""}`}
         />
 
-        <span className="text-md absolute -right-1 -top-2 z-10 ml-2 rounded-full bg-green-500 px-1 py-0.5 font-bold text-black">
+        <span className="text-md absolute -right-1 -top-2 z-10 ml-2 rounded-full bg-primary px-1 py-0.5 font-bold text-white">
           {cartLength}
         </span>
       </a>

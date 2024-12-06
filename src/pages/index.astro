@@ -7,8 +7,9 @@ import ProductsFamilySection from "@components/sections/landing/ProductsFamilySe
 import WorldMap from "@components/sections/landing/WorldMap.astro";
 import FAQ from "@components/sections/misc/FAQ.astro";
 import faqs from "@data/faqs.json";
-import FeaturesStatsAlt from "@/components/sections/features/FeaturesStatsAlt.astro";
+import WhyChoose from "@/components/sections/features/FeaturesStatsAlt.astro";
 import TestimonialsSectionAlt from "@/components/sections/testimonials/TestimonialsSectionAlt.astro";
+import FeaturesStats from "@/components/sections/features/FeaturesStats.astro";
 
 const testimonials = [
   // First testimonial data
@@ -75,9 +76,7 @@ const testimonials = [
     subTitle="We are the sole supplier for Sallora Food Products, Sallora Uglo, and Asala Products across Europe."
   />
 
-  <BestSellingSection />
-
-  <FeaturesStatsAlt
+  <WhyChoose
     title="Why Choose Salloura?"
     subTitle="At Sallora, quality begins at the source. We pride ourselves on selecting only the finest ingredients to create products that are both authentic and exceptional. From our food products to our signature Arabic sweets, every item is crafted with care and precision, staying true to tradition while meeting modern standards."
     benefits={[
@@ -101,7 +100,7 @@ const testimonials = [
       },
     ]}
   />
-
+  <BestSellingSection />
   <WorldMap />
 
   <TestimonialsSectionAlt
