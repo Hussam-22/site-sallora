@@ -46,27 +46,26 @@ interface Props {
 
 <!-- Defining a grid container that holds all the content -->
 <section
-  class="to-base-100 mx-auto mt-10 grid gap-4 overflow-hidden rounded-2xl bg-gradient-to-r from-primary/40 md:grid-cols-2 md:items-center md:gap-8 lg:pl-8"
+  class="mx-auto mt-10 grid gap-1 overflow-hidden rounded-2xl bg-gradient-to-br from-primary/40 to-base-100 sm:grid-cols-2 sm:items-center sm:gap-8 sm:bg-gradient-to-r sm:pl-8"
 >
   <!-- Title and description -->
-  <div>
+  <div class="px-6 pb-6 pt-16 text-center sm:py-0 sm:pl-6 sm:text-left">
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
     <h1
-      class="block text-balance text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-7xl lg:leading-none"
+      class="block whitespace-nowrap text-balance text-5xl font-bold tracking-tight text-black lg:text-7xl lg:leading-none"
     >
       <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
       <Fragment set:html={title} />
     </h1>
-    <h2 class="text-xl">{secondaryTitle}</h2>
     {
       subTitle && (
-        <p class="text-md mt-3 text-pretty leading-relaxed text-black lg:w-4/5">
+        <h2 class="text-md mt-3 text-pretty leading-relaxed text-black lg:w-4/5">
           {subTitle}
-        </p>
+        </h2>
       )
     }
     <!-- Action Button Section: This section includes two CTAs with their own styles and URL -->
-    <div class="mt-7 grid w-full gap-3 sm:inline-flex">
+    <div class="mt-7 flex w-full flex-col-reverse gap-3 sm:flex-row">
       {primaryBtn && <PrimaryCTA title={primaryBtn} url={primaryBtnURL} />}
       {
         (
@@ -80,6 +79,5 @@ interface Props {
     </div>
   </div>
 
-  <!-- Hero Image Section -->
   <HeroCardsCarousel />
 </section>

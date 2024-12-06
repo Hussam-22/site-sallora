@@ -17,7 +17,7 @@ const {
 
 <div
   class:list={[
-    "group relative h-[300px] overflow-hidden rounded-3xl",
+    "group relative h-full overflow-hidden rounded-3xl sm:h-[300px]",
     bgColor,
     cardWidth,
     textColor,
@@ -25,7 +25,7 @@ const {
 >
   <div class="relative z-10 flex flex-col space-y-3 p-8">
     <h2 class="z-10 text-4xl font-bold">{title}</h2>
-    <p class="z-10 text-sm sm:w-2/3">{subTitle}</p>
+    <p class="z-10 w-2/3 text-sm">{subTitle}</p>
 
     <LinkButton
       title={`View ${totalProducts ? totalProducts : "All"} Products`}

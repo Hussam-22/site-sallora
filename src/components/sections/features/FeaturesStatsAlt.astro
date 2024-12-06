@@ -20,9 +20,9 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
 <section class="px-6 sm:px-0">
   <!-- Grid -->
   <div class="grid gap-8 sm:grid-cols-2">
-    <div class="relative">
+    <div class="hidden sm:relative sm:block">
       <Image
-        class="h-fit rounded-xl sm:absolute sm:right-4 sm:top-4 sm:w-2/3"
+        class="ml-6 h-fit rounded-xl sm:absolute sm:right-4 sm:top-4 sm:w-2/3"
         src={farmImage3}
         alt="Image of a farmer working in the field with vegetables on his hand"
       />
@@ -33,10 +33,24 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
       />
     </div>
 
-    <div class="mt-5 lg:mt-0">
-      <h2 class="text-balance text-3xl font-bold lg:text-4xl">
+    <div class="">
+      <p class="mb-4 text-balance text-center text-4xl font-bold sm:text-left">
         {title}
-      </h2>
+      </p>
+
+      <div class="my-6 sm:hidden">
+        <Image
+          class="ml-6 h-fit rounded-xl"
+          src={farmImage3}
+          alt="Image of a farmer working in the field with vegetables on his hand"
+        />
+        <Image
+          class="bottom-4 -ml-6 -mt-10 rounded-xl"
+          src={farmImage4}
+          alt="A bowl of fresh ghee with a spoon on a wooden table"
+        />
+      </div>
+
       {subTitle && <p class="mb-4 text-pretty">{subTitle}</p>}
       {
         benefits && (
