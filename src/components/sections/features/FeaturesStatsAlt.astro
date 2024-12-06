@@ -17,50 +17,44 @@ interface Props {
 const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-primary flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
 ---
 
-<section
-  class="rounded-3xlpx-4 overflow-visible py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
+<section class="px-6 sm:px-0">
   <!-- Grid -->
-  <div class="grid grid-cols-2 space-x-10">
-    <div class="relative rounded-3xl p-8">
+  <div class="grid gap-8 sm:grid-cols-2">
+    <div class="relative">
       <Image
-        class="absolute right-4 top-4 h-fit w-2/3 rounded-xl"
+        class="h-fit rounded-xl sm:absolute sm:right-4 sm:top-4 sm:w-2/3"
         src={farmImage3}
-        alt="Mockup of floating boxes"
+        alt="Image of a farmer working in the field with vegetables on his hand"
       />
       <Image
-        class="absolute bottom-4 left-4 w-2/3 rounded-xl"
+        class="bottom-4 -ml-6 -mt-10 rounded-xl sm:absolute sm:left-4 sm:w-2/3"
         src={farmImage4}
-        alt="Mockup of floating boxes"
+        alt="A bowl of fresh ghee with a spoon on a wooden table"
       />
     </div>
 
-    <div class="mt-5 sm:mt-10 lg:mt-0">
-      <div class="space-y-6 sm:space-y-8">
-        <div class="space-y-2 md:space-y-4">
-          <h2 class="text-balance text-3xl font-bold lg:text-4xl">
-            {title}
-          </h2>
-          {subTitle && <p class="text-pretty">{subTitle}</p>}
-        </div>
-        {
-          benefits && (
-            <ul class="space-y-2 sm:space-y-4">
-              {benefits.map((item) => (
-                <li class="flex space-x-3">
-                  <Fragment set:html={ListItemMarker} />
-                  <div>
-                    <h3 class="text-lg font-semibold">{item.title}</h3>
-                    <div class="text-pretty text-sm font-light">
-                      {item.content}
-                    </div>
+    <div class="mt-5 lg:mt-0">
+      <h2 class="text-balance text-3xl font-bold lg:text-4xl">
+        {title}
+      </h2>
+      {subTitle && <p class="mb-4 text-pretty">{subTitle}</p>}
+      {
+        benefits && (
+          <ul class="space-y-2 sm:space-y-4">
+            {benefits.map((item) => (
+              <li class="flex space-x-3">
+                <Fragment set:html={ListItemMarker} />
+                <div>
+                  <h3 class="text-lg font-semibold">{item.title}</h3>
+                  <div class="text-pretty text-sm font-light">
+                    {item.content}
                   </div>
-                </li>
-              ))}
-            </ul>
-          )
-        }
-      </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )
+      }
     </div>
   </div>
 </section>

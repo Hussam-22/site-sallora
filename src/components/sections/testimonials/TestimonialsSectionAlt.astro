@@ -21,13 +21,13 @@ interface Props {
   testimonials: Testimonial[];
 }
 ---
+
 <!-- Main div that wraps the testimonials section -->
 <section
-  class="mx-auto max-w-[85rem] px-4 sm:px-6 lg:px-8 2xl:max-w-full bg-white py-16 rounded-3xl"
+  class="mx-auto max-w-[85rem] rounded-3xl bg-white px-4 py-16 sm:px-6 lg:px-8 2xl:max-w-full"
   id="testimonials"
 >
-
-<FeaturesStats
+  <FeaturesStats
     title="By the Numbers"
     subTitle="Our commitment to quality and reliability is evident in every project we undertake. At ScrewFast, we are dedicated to delivering industry-leading services that ensure your construction projects are built to last."
     mainStatTitle="96%"
@@ -49,10 +49,8 @@ interface Props {
   />
 
   <!-- Title of the testimonials section -->
-  <div class="w-3/4 max-w-2xl mt-20 mb-6">
-    <h2
-      class="text-balance text-2xl font-bold  sm:text-3xl lg:text-4xl"
-    >
+  <div class="mb-6 mt-20 max-w-2xl text-center sm:w-3/4 sm:text-left">
+    <h2 class="text-balance text-4xl font-bold">
       {title}
     </h2>
   </div>
@@ -61,29 +59,26 @@ interface Props {
     <!-- Looping through each testimonial data and rendering it -->
     {
       testimonials.map((testimonial) => (
-        <div class="flex h-auto">
-          <div class="flex flex-col rounded-xl ">
-            <div class="flex-auto p-4 md:p-6">
-              <!-- Testimonial content -->
-              <p class="text-pretty text-base italic  md:text-lg">
+        <div class="flex h-auto rounded-3xl bg-zinc-100 p-6">
+          <div class="flex flex-col rounded-xl">
+            <div class="flex-auto">
+              <p class="text-pretty text-base italic md:text-lg">
                 {testimonial.content}
               </p>
             </div>
 
-            <div class="rounded-b-xl ">
+            <div class="rounded-b-xl">
               <div class="flex items-center">
                 <AvatarTestimonialSection
                   src={testimonial.avatarSrc}
                   alt={testimonial.avatarAlt}
                 />
 
-                <div class="ms-3 grow">
-                  <p class="text-sm font-bold  sm:text-base">
+                <div class="ms-3 mt-4 grow sm:mt-0">
+                  <p class="text-sm font-bold sm:text-base">
                     {testimonial.author}
                   </p>
-                  <p class="text-xs ">
-                    {testimonial.role}
-                  </p>
+                  <p class="text-xs">{testimonial.role}</p>
                 </div>
               </div>
             </div>

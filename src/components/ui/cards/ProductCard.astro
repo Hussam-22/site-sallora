@@ -1,12 +1,10 @@
 ---
 import { Image } from "astro:assets";
-import LinkButton from "../buttons/LinkButton.astro";
 import QuickAddRemoveCartButton from "@/components/react/quick-add-remove-cart-btn";
 
 const {
   title,
   price,
-  description,
   imageSrc,
   family,
   link,
@@ -37,7 +35,10 @@ const product = {
 
 <!-- component -->
 <div
-  class="flex h-full max-w-[720px] flex-col overflow-hidden rounded-3xl bg-white"
+  class:list={[
+    "flex h-full max-w-[720px] flex-col overflow-hidden rounded-3xl bg-white",
+    classStyle,
+  ]}
 >
   <!-- Centering wrapper -->
 

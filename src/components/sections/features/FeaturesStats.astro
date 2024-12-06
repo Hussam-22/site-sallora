@@ -20,50 +20,38 @@ type Stat = {
 };
 ---
 
-<section
-  class=""
->
-  <div class="max-w-screen-md">
+<section class="">
+  <div class="max-w-screen-md text-center sm:text-left">
     <!-- Main title -->
-    <h2
-      class="mb-4 text-balance text-4xl font-extrabold tracking-tight "
-    >
+    <h2 class="mb-4 text-balance text-4xl font-extrabold tracking-tight">
       {title}
     </h2>
     <!-- Subtitle -->
-    {subTitle &&
-    <p
-      class="mb-16 max-w-prose text-pretty font-normal  sm:text-xl"
-    >
-      {subTitle}
-    </p>
+    {
+      subTitle && (
+        <p class="mb-16 max-w-prose text-pretty font-normal sm:text-xl">
+          {subTitle}
+        </p>
+      )
     }
   </div>
   <!-- Grid container for statistics -->
   <div class="grid items-center gap-6 lg:grid-cols-12 lg:gap-12">
     <!-- First grid item, showing a big statistics -->
-    <div class="lg:col-span-4 bg-zinc-100 rounded-3xl py-6 px-6 mr-4">
-      <StatsBig
-        title={mainStatTitle}
-        subTitle={mainStatSubTitle}
-      />
+    <div class="rounded-3xl bg-zinc-100 px-6 py-6 sm:mr-4 lg:col-span-4">
+      <StatsBig title={mainStatTitle} subTitle={mainStatSubTitle} />
     </div>
     <!-- Second grid item, showing multiple small statistics -->
-    {stats &&
-    <div
-      class="relative lg:col-span-8 lg:before:absolute lg:before:-start-12 lg:before:top-0 lg:before:h-full lg:before:w-px lg:before:bg-zinc-300 lg:before:dark:bg-zinc-700"
-    >
-      <div
-        class="grid grid-cols-2 gap-6 sm:gap-8 md:grid-cols-4 lg:grid-cols-3 bg-zinc-100 rounded-3xl py-2 px-6"
-      >
-        <!-- Iterate over the 'stats' array and create a 'StatsSmall' component for each object in the array -->
-        {
-          stats.map((stat) => (
-            <StatsSmall title={stat.stat} subTitle={stat.description} />
-          ))
-        }
-      </div>
-    </div>
+    {
+      stats && (
+        <div class="relative lg:col-span-8 lg:before:absolute lg:before:-start-12 lg:before:top-0 lg:before:h-full lg:before:w-px lg:before:bg-zinc-300 lg:before:dark:bg-zinc-700">
+          <div class="grid grid-cols-2 gap-6 rounded-3xl bg-zinc-100 px-6 py-6 sm:gap-8 md:grid-cols-4 lg:grid-cols-3">
+            {stats.map((stat) => (
+              <StatsSmall title={stat.stat} subTitle={stat.description} />
+            ))}
+          </div>
+        </div>
+      )
     }
   </div>
 </section>

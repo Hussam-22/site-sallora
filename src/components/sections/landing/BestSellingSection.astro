@@ -7,8 +7,6 @@ import { getCollection } from "astro:content";
 const bestSellingProducts = await getCollection("products", ({ id, data }) => {
   return id.startsWith("en/") && data?.bestSelling === true;
 });
-
-console.log(bestSellingProducts);
 ---
 
 <section class="px-3 py-12 sm:px-8">

@@ -10,15 +10,9 @@ interface Props {
 
 <div class="mx-auto mb-16 w-full max-w-screen-lg space-y-2 text-center">
   <h2
-    class="text-primary-content text-balance text-5xl font-bold leading-tight sm:text-5xl"
+    class="text-balance text-5xl font-bold leading-tight text-primary-content sm:text-5xl"
   >
     {title}
   </h2>
-  {
-    subTitle && (
-      <p class="text-pretty leading-tight text-neutral-600 dark:text-neutral-400">
-        {subTitle}
-      </p>
-    )
-  }
+  {subTitle && <p class="text-pretty leading-tight">{subTitle}</p>}
 </div>
