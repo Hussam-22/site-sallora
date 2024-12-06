@@ -5,14 +5,14 @@ import { Image } from "astro:assets";
 import europeFlag from "@/assets/images/misc/europe-flag.jpg";
 ---
 
-<section
-  class="overflow-visible rounded-3xl px-4 py-10 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full"
->
+<section class="rounded-3xl px-4 py-16 sm:px-6 lg:px-8 lg:py-14 2xl:max-w-full">
   <!-- <SectionTitle
     title="Supply & Logistics"
     subTitle="Our robust supply chain ensures timely delivery of products across Europe. With a focus on efficiency and reliability, Sallora is your go-to partner for consistent product availability."
   /> -->
-  <div class="grid grid-cols-2 gap-8">
+  <div
+    class="grid grid-cols-2 gap-8 bg-opacity-20 bg-[url('/assets/shapes/world-map.svg')] bg-contain bg-left bg-no-repeat"
+  >
     <div class="content-center">
       <p class="text-5xl font-bold text-black">
         Your Trusted Supplier of Salloura and Asala Food Products Across Europe
