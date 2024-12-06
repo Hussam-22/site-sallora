@@ -14,7 +14,7 @@ interface Props {
 }
 
 // Define SVG marker to be used in the component
-const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-primary dark:text-primary flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
+const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-0.5 h-6 w-6 text-primary flex-none"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>`;
 ---
 
 <section
@@ -38,16 +38,10 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
     <div class="mt-5 sm:mt-10 lg:mt-0">
       <div class="space-y-6 sm:space-y-8">
         <div class="space-y-2 md:space-y-4">
-          <h2
-            class="text-balance text-3xl font-bold text-neutral-800 dark:text-black lg:text-4xl"
-          >
+          <h2 class="text-balance text-3xl font-bold lg:text-4xl">
             {title}
           </h2>
-          {
-            subTitle && (
-              <p class="text-pretty text-black dark:text-white">{subTitle}</p>
-            )
-          }
+          {subTitle && <p class="text-pretty">{subTitle}</p>}
         </div>
         {
           benefits && (
@@ -56,10 +50,8 @@ const ListItemMarker: string = `<svg fill="none" viewBox="0 0 24 24" stroke-widt
                 <li class="flex space-x-3">
                   <Fragment set:html={ListItemMarker} />
                   <div>
-                    <h3 class="text-lg font-semibold text-black dark:text-neutral-200">
-                      {item.title}
-                    </h3>
-                    <div class="text-pretty text-sm font-light text-black dark:text-white">
+                    <h3 class="text-lg font-semibold">{item.title}</h3>
+                    <div class="text-pretty text-sm font-light">
                       {item.content}
                     </div>
                   </div>

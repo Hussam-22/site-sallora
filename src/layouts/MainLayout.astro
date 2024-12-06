@@ -22,7 +22,7 @@ interface Props {
 This is the main structure for the page.
 We set the language of the page to English and add classes for scrollbar and scroll behavior.
 -->
-<html lang={lang} class="scrollbar-hide lenis lenis-smooth scroll-pt-16">
+<html data-theme="cupcake" lang={lang}>
   <head>
     <!-- Adding metadata to the HTML document -->
     <Meta meta={meta} structuredData={structuredData} />
@@ -43,7 +43,7 @@ We set the language of the page to English and add classes for scrollbar and scr
 
     <ViewTransitions />
   </head>
-  <body class="bg-gold-50 dark:bg-neutral-800">
+  <body class="bg-base-100">
     <!--
     Setting up the main structure of the page.
     The Navbar is placed at the top, with a slot for the main content and FooterSection at the bottom.

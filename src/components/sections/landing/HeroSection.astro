@@ -46,13 +46,13 @@ interface Props {
 
 <!-- Defining a grid container that holds all the content -->
 <section
-  class="to-copper-100 mx-auto mt-10 grid gap-4 overflow-hidden rounded-2xl bg-gradient-to-r from-green-100 md:grid-cols-2 md:items-center md:gap-8 lg:pl-8"
+  class="to-base-100 mx-auto mt-10 grid gap-4 overflow-hidden rounded-2xl bg-gradient-to-r from-primary/40 md:grid-cols-2 md:items-center md:gap-8 lg:pl-8"
 >
   <!-- Title and description -->
   <div>
     <!-- Each h1 and p tag renders a portion of the title and subTitle defined above -->
     <h1
-      class="block text-balance text-3xl font-bold tracking-tight text-black dark:text-neutral-200 sm:text-4xl lg:text-7xl lg:leading-none"
+      class="block text-balance text-3xl font-bold tracking-tight text-black sm:text-4xl lg:text-7xl lg:leading-none"
     >
       <!-- About Fragment: https://docs.astro.build/en/basics/astro-syntax/#fragments -->
       <Fragment set:html={title} />
@@ -60,7 +60,7 @@ interface Props {
     <h2 class="text-xl">{secondaryTitle}</h2>
     {
       subTitle && (
-        <p class="text-md mt-3 text-pretty leading-relaxed text-zinc-500 dark:text-neutral-400 lg:w-4/5">
+        <p class="text-md mt-3 text-pretty leading-relaxed text-black lg:w-4/5">
           {subTitle}
         </p>
       )

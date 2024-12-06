@@ -26,12 +26,12 @@ const {
   <div class="relative z-10 flex flex-col space-y-3 p-8">
     <h2 class="z-10 text-4xl font-bold">{title}</h2>
     <p class="z-10 text-sm sm:w-2/3">{subTitle}</p>
-    {
-      totalProducts && (
-        <p class="z-10 text-sm text-black sm:w-2/3">{totalProducts} Products</p>
-      )
-    }
-    <LinkButton title="view products" bgColor={btnColor} url="/products" />
+
+    <LinkButton
+      title={`View ${totalProducts ? totalProducts : "All"} Products`}
+      bgColor={btnColor}
+      url="/products"
+    />
   </div>
   <Image
     src={ImageSrc}
