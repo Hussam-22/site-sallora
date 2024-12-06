@@ -23,8 +23,8 @@ export default function CartItems() {
   }
 
   return (
-    <div className="grid grid-cols-12 space-x-8">
-      <div className="col-span-8">
+    <div className="grid grid-cols-12 space-y-8 sm:space-x-8">
+      <div className="col-span-12 sm:col-span-8">
         <div className="flex flex-col gap-2">
           <div className="flex justify-end">
             <div
@@ -55,19 +55,19 @@ export default function CartItems() {
         </div>
       </div>
 
-      <div className="col-span-4">
+      <div className="col-span-12 sm:col-span-4">
         <div className="flex flex-col gap-4">
-          <div className="rounded-3xl bg-green-100 p-6">
+          <div className="rounded-3xl bg-primary/50 p-6">
             <p className="text-center text-4xl font-semibold text-black">
               Order Summary
             </p>
             <div className="mt-4 flex flex-row items-center justify-center gap-3">
-              <p className="text-sm text-zinc-600">Total Items:</p>
-              <p className="text-sm font-semibold text-black">{totalCartQty}</p>
+              <p className="text-lg text-zinc-600">Total Items:</p>
+              <p className="text-lg font-semibold text-black">{totalCartQty}</p>
             </div>
             <div className="mt-1 flex flex-row items-center justify-center gap-3">
-              <p className="text-sm text-zinc-600">Total Cost:</p>
-              <p className="text-sm font-semibold text-black">
+              <p className="text-lg text-zinc-600">Total Cost:</p>
+              <p className="text-lg font-semibold text-black">
                 {totalCartCost.toFixed(2)} €
               </p>
             </div>

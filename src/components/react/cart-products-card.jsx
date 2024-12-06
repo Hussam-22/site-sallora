@@ -13,17 +13,19 @@ export default function CartProductsCard({
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
   return (
-    <div className="flex flex-row items-center justify-between rounded-3xl bg-zinc-100 px-3 py-2">
-      <img
-        src={imageSrc.src}
-        alt={title}
-        className="h-24 w-24 rounded-3xl bg-white object-cover p-1"
-      />
-      <div className="flex-grow px-4">
-        <p className="text-xl text-black">{title}</p>
-        <p className="text-xs text-zinc-600">{family.join(" - ")}</p>
+    <div className="flex flex-col justify-between gap-4 rounded-3xl bg-white px-3 py-2 sm:flex-row sm:items-center">
+      <div class="flex flex-row items-center justify-start">
+        <img
+          src={imageSrc.src}
+          alt={title}
+          className="h-24 w-24 rounded-3xl bg-white object-cover p-1"
+        />
+        <div className="flex-grow px-4">
+          <p className="text-xl text-black">{title}</p>
+          <p className="text-xs text-zinc-600">{family.join(" - ")}</p>
+        </div>
       </div>
-      <div className="flex flex-row gap-2">
+      <div className="flex flex-row justify-center gap-2">
         <p className="border-r-2 border-r-zinc-300 px-2 text-xl text-black">
           {price * qty} €
         </p>

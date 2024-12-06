@@ -129,9 +129,9 @@ const GROUPS = [
           class="drawer-overlay"></label>
 
         <ul
-          class="menu min-h-full w-80 rounded-[0_50px_50px_0] bg-zinc-50 px-4 py-10"
+          class="menu min-h-full w-[60vw] rounded-[0_50px_50px_0] bg-zinc-50 px-4 py-10"
         >
-          <li class="mb-2 text-xl font-semibold text-green-900">Filter By:</li>
+          <li class="mb-2 text-xl font-semibold text-primary">Filter By:</li>
           <!-- Sidebar content here -->
           {
             GROUPS.map((group) => (
@@ -141,8 +141,8 @@ const GROUPS = [
                   class:list={[
                     "cursor-pointer text-xl font-semibold capitalize",
                     productName === group.path
-                      ? "rounded-lg bg-green-700 px-3 py-1 text-white"
-                      : "text-zinc-400 hover:text-black",
+                      ? "rounded-lg bg-primary px-3 py-1 text-white"
+                      : "hover:text-primary",
                   ]}
                 >
                   {group.title}

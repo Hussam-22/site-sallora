@@ -279,7 +279,7 @@ export default function SubmitCartForm() {
 
             <button
               type="submit"
-              className="umami--click--contact-submit w-full rounded-md bg-green-700 px-7 py-4 text-white transition-colors hover:bg-green-500 focus:outline-none focus:ring focus:ring-green-300 focus:ring-offset-2"
+              className="umami--click--contact-submit w-full rounded-md bg-primary px-7 py-4 transition-colors hover:bg-primary/70 focus:outline-none focus:ring focus:ring-green-300 focus:ring-offset-2"
             >
               {isSubmitting ? (
                 <svg
@@ -303,7 +303,7 @@ export default function SubmitCartForm() {
                   ></path>
                 </svg>
               ) : (
-                "Send Message"
+                "Submit Order"
               )}
             </button>
           </form>
@@ -314,7 +314,7 @@ export default function SubmitCartForm() {
               <svg
                 width="100"
                 height="100"
-                className="text-green-300"
+                className="text-primary"
                 viewBox="0 0 100 100"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -325,10 +325,10 @@ export default function SubmitCartForm() {
                   strokeWidth="3"
                 />
               </svg>
-              <h3 className="py-5 text-2xl text-green-500">Success</h3>
+              <h3 className="py-5 text-2xl text-primary">Success</h3>
               <p className="text-gray-700 md:px-3">{Message}</p>
               <button
-                className="mt-6 text-indigo-600 focus:outline-none"
+                className="mt-6 rounded-3xl bg-secondary p-2 focus:outline-none"
                 onClick={() => reset()}
               >
                 Go back
